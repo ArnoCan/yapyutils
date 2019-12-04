@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.5. yapyutils.files.finder &mdash; yapyutils  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5.6. yapyutils.files.utilities" href="yapyutils.files.utilities.html" />
+    <link rel="prev" title="5.4. yapyutils.files.__init__" href="yapyutils.files.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">YapyUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">4. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">5. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.html">5.1. yapyutils.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.config.html">5.2. yapyutils.config.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.config.capabilities.html">5.3. yapyutils.config.capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.html">5.4. yapyutils.files.__init__</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.5. yapyutils.files.finder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-yapyutils.files.finder">5.5.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">5.5.2. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#find-files">5.5.2.1. find_files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-filelocation">5.5.2.2. get_filelocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-filesysposition">5.5.2.3. get_filesysposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#splitfile">5.5.2.4. splitfile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">5.5.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.utilities.html">5.6. yapyutils.files.utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.help.html">5.7. yapyutils.help.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.modules.html">5.8. yapyutils.modules.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.modules.loader.html">5.9. yapyutils.modules.loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.releases.html">5.10. yapyutils.releases.__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">6. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">7. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">8. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">10. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">yapyutils</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">5. Modules</a> &raquo;</li>
+        
+      <li>5.5. yapyutils.files.finder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/yapyutils.files.finder.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab"><div class="section" id="yapyutils-files-finder">
+<span id="files-finder"></span><h1>5.5. yapyutils.files.finder<a class="headerlink" href="#yapyutils-files-finder" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-yapyutils.files.finder">
+<span id="module"></span><h2>5.5.1. Module<a class="headerlink" href="#module-yapyutils.files.finder" title="Permalink to this headline">¶</a></h2>
+<p><em>yapyutils.files.finder</em> provides file locations.</p>
+</div>
+<div class="section" id="functions">
+<h2>5.5.2. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="find-files">
+<span id="id1"></span><h3>5.5.2.1. find_files<a class="headerlink" href="#find-files" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.files.finder.find_files">
+<code class="sig-prename descclassname">yapyutils.files.finder.</code><code class="sig-name descname">find_files</code><span class="sig-paren">(</span><em class="sig-param">srcdir</em>, <em class="sig-param">*wildcards</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/files/finder.html#find_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.files.finder.find_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assembles a list of package files for package_files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>srcdir</strong> – Source root.</p></li>
+<li><p><strong>*wildcards</strong> – List of globs.</p></li>
+<li><p><strong>kargs</strong> – <dl class="simple">
+<dt>single_level:</dt><dd><p>Flat only.</p>
+</dd>
+<dt>subpath:</dt><dd><p>Cut topmost path elemenr from listelements,
+special for dictionaries.</p>
+</dd>
+<dt>nopostfix:</dt><dd><p>Drop filename postfix.</p>
+</dd>
+<dt>packages:</dt><dd><p>List packages only, else files.</p>
+</dd>
+<dt>yield_folders:</dt><dd><p>List folders only.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Results in an list.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>pass-through</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="get-filelocation">
+<span id="get-filelocation-doc"></span><h3>5.5.2.2. get_filelocation<a class="headerlink" href="#get-filelocation" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.files.finder.get_filelocation">
+<code class="sig-prename descclassname">yapyutils.files.finder.</code><code class="sig-name descname">get_filelocation</code><span class="sig-paren">(</span><em class="sig-param">fname</em>, <em class="sig-param">spaths=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/files/finder.html#get_filelocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.files.finder.get_filelocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A very basic function for the detection of the absolute path and
+the relative module search-path-name for a given path of a module.
+The values are the same as would be present in <em>sys.modules</em>.
+Supports source modules as input only.</p>
+<p>The <em>platformids</em> is a low-level library within the software stack.
+The generic functions for the allocation of module sources and binaries
+are provided by <em>sourceinfo</em> <a class="reference internal" href="references.html#sourceinfo" id="id2"><span>[sourceinfo]</span></a>, which itself depends on
+the <em>platformids</em>. Thus <em>sourceinfo</em> could not be used in order to avoid
+circular dependencies. So implemented this function to keep <em>platformids</em>
+on lowest possible software-stack level only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> – <p>The relative path of the module in dotted <em>Python</em> notation, without
+file suffix.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mname</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+     <span class="o">&lt;</span><span class="n">dotted</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="nb">str</span><span class="o">&gt;</span>
+   <span class="o">|</span> <span class="o">&lt;</span><span class="n">dotted</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="nb">str</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</p></li>
+<li><p><strong>spaths</strong> – <p>List of search paths,</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="nb">abs</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The default when no match occured is to rely on the more versatile
+search mechanism of the import implementation of the concrete
+<em>Python</em> implementation for another final trial by the caller:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">fime</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Returns in case of a match the resulting entry within <em>sys.modules</em></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>PlatformIDsError</strong> – ‘mbase’ does not match ‘mpaths’</p></li>
+<li><p><strong>PlatformIDsPresentError</strong> – missing ‘mbase’</p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="get-filesysposition">
+<span id="id3"></span><h3>5.5.2.3. get_filesysposition<a class="headerlink" href="#get-filesysposition" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.files.finder.get_filesysposition">
+<code class="sig-prename descclassname">yapyutils.files.finder.</code><code class="sig-name descname">get_filesysposition</code><span class="sig-paren">(</span><em class="sig-param">rfpname</em>, <em class="sig-param">toppath=None</em>, <em class="sig-param">spaths=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/files/finder.html#get_filesysposition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.files.finder.get_filesysposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the specified module by it’s name and file system path.
+Provides a common interface for all supported platforms and Python
+implementations: <em>CPyhton</em>, <em>IPython</em>, <em>IronPython</em>, <em>Jython</em>,
+and <em>PyPy</em>. For the syntaxversions <em>Python2.7</em> and <em>Python3</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rfpname</strong> – File path name of file to be searched, which is either
+absolute, or relative. An absolute file path is vallidated
+only, while a relative is searched within the set of <em>spaths</em>,
+which are resolved iterative from longest upward.
+The limiting top node is <em>toppath</em> as the highest valid hook
+for ‘rfpname’ as subpath.</p></li>
+<li><p><strong>toppath</strong> – The constraint of the top level for the search operation.</p></li>
+<li><p><strong>spaths</strong> – <p>The list of search paths as insertion points of the subpath
+‘rfpname’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="p">[</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),]</span> \
+    <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span> \
+    <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">pathsep</span><span class="p">)</span>
+</pre></div>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>The module object on success:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>else:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PlatformIDsError</strong> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="splitfile">
+<h3>5.5.2.4. splitfile<a class="headerlink" href="#splitfile" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.files.finder.splitfile">
+<code class="sig-prename descclassname">yapyutils.files.finder.</code><code class="sig-name descname">splitfile</code><span class="sig-paren">(</span><em class="sig-param">fpname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/files/finder.html#splitfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.files.finder.splitfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits filename from it’s pathname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fpname</strong> – The file path name to be split.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>The splitted file path name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">pathname</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In case of directory input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">pathname</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#yapyutils.files.finder.YapyUtilsFinderError" title="yapyutils.files.finder.YapyUtilsFinderError"><strong>YapyUtilsFinderError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>5.5.3. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="yapyutils.files.finder.YapyUtilsFinderError">
+<em class="property">exception </em><code class="sig-prename descclassname">yapyutils.files.finder.</code><code class="sig-name descname">YapyUtilsFinderError</code><a class="reference internal" href="_modules/yapyutils/files/finder.html#YapyUtilsFinderError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.files.finder.YapyUtilsFinderError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="yapyutils.files.utilities.html" class="btn btn-neutral float-right" title="5.6. yapyutils.files.utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="yapyutils.files.html" class="btn btn-neutral float-left" title="5.4. yapyutils.files.__init__" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 04, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>yapyutils.config.capabilities</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link - Main Document -->
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="yapyutils-module.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setupdocx">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="subnavbar" width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td>
+      <table class="items" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <span class="options">
+                  <a href="frames.html" target="_top">&lt;Frames(L)</a>
+                </span>
+                &nbsp;
+            </td>
+            <td align="center">
+                &#124;
+                &nbsp;
+                <span class="options">
+                    <a href="yapyutils.config.capabilities-pysrc.html" target="_top">No&nbsp;Frames</a>
+                </span>
+                &nbsp;
+                &#124;
+            </td>
+            <td align="center">
+                &nbsp;
+                <span class="options">
+                   <a href="frames-right.html" target="_top">Frames(R)&gt;</a>
+                </span>
+            </td>
+           </tr>
+      </table>
+    </td>
+    <td>
+    </td>
+ </tr>
+ <tr>
+</table>
+      <span class="breadcrumbs">
+        Package&nbsp;yapyutils ::
+        <a href="yapyutils.config-module.html">Package&nbsp;config</a> ::
+        Module&nbsp;capabilities
+      </span>
+<h1 class="epydoc">Source Code for <a href="yapyutils.config.capabilities-module.html">Module yapyutils.config.capabilities</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">&quot;&quot;&quot;*yapyutils.config.capabilities* provides simple hierarchical configuration</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">file utils based on in-memory JSON representation. This includes nested and</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">chained configuration data branches.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">The provided features are designed to provide some powerful features of structured</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">configuration based on basic standard libraries, thus providing advanced setup</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">support utilities for components of the lower software stack.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">The higher layer software components should prefer more versatile and powerful</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">libraries such as **multiconf**.</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">The package *multiconf* provides tools for the conversion of various data formats</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">into *JSON*. This could be used to apply e.g. data type definitions supporting</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">inline comments - which JSON lacks.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">&quot;&quot;&quot;</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package yapyutils=yapyutils-module.html"><a title="yapyutils" class="py-name" href="#" onclick="return doclink('link-0', 'yapyutils', 'link-0');">yapyutils</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package yapyutils.config=yapyutils.config-module.html"><a title="yapyutils.config" class="py-name" href="#" onclick="return doclink('link-1', 'config', 'link-1');">config</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class yapyutils.config.YapyUtilsConfigError=yapyutils.config.YapyUtilsConfigError-class.html"><a title="yapyutils.config.YapyUtilsConfigError" class="py-name" href="#" onclick="return doclink('link-2', 'YapyUtilsConfigError', 'link-2');">YapyUtilsConfigError</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">yapydata</tt><tt class="py-op">.</tt><tt class="py-name">datatree</tt><tt class="py-op">.</tt><tt class="py-name">synjson</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-name">__author__</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;Arno-Can Uestuensoez&#x27;</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-name">__license__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;Copyright (C) 2019 Arno-Can Uestuensoez&quot;</tt> \ </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">                <tt class="py-string">&quot; @Ingenieurbuero Arno-Can Uestuensoez&quot;</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;0.1.1&#x27;</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable yapyutils.files.utilities.__uuid__=yapyutils.files.utilities-module.html#__uuid__,Variable yapyutils.files.finder.__uuid__=yapyutils.files.finder-module.html#__uuid__,Variable yapyutils.modules.loader.__uuid__=yapyutils.modules.loader-module.html#__uuid__,Variable yapyutils.help.__uuid__=yapyutils.help-module.html#__uuid__,Variable yapyutils.config.__uuid__=yapyutils.config-module.html#__uuid__,Variable yapyutils.__uuid__=yapyutils-module.html#__uuid__,Variable yapyutils.config.capabilities.__uuid__=yapyutils.config.capabilities-module.html#__uuid__,Variable yapyutils.files.__uuid__=yapyutils.files-module.html#__uuid__,Variable yapyutils.releases.__uuid__=yapyutils.releases-module.html#__uuid__,Variable yapyutils.modules.__uuid__=yapyutils.modules-module.html#__uuid__"><a title="yapyutils.files.utilities.__uuid__
+yapyutils.files.finder.__uuid__
+yapyutils.modules.loader.__uuid__
+yapyutils.help.__uuid__
+yapyutils.config.__uuid__
+yapyutils.__uuid__
+yapyutils.config.capabilities.__uuid__
+yapyutils.files.__uuid__
+yapyutils.releases.__uuid__
+yapyutils.modules.__uuid__" class="py-name" href="#" onclick="return doclink('link-3', '__uuid__', 'link-3');">__uuid__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;60cac28d-efe6-4a8d-802f-fa4fc94fa741&quot;</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;restructuredtext en&quot;</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-comment">#: default alternate search path locations for configuration files</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable yapyutils.config.capabilities._SPATH=yapyutils.config.capabilities-module.html#_SPATH"><a title="yapyutils.config.capabilities._SPATH" class="py-name" href="#" onclick="return doclink('link-4', '_SPATH', 'link-4');">_SPATH</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">curdir</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt><tt class="py-name">__file__</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27;builder&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-comment">#: known suffixes</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt id="link-5" class="py-name" targets="Variable yapyutils.config.capabilities.SUFFIXES=yapyutils.config.capabilities-module.html#SUFFIXES"><a title="yapyutils.config.capabilities.SUFFIXES" class="py-name" href="#" onclick="return doclink('link-5', 'SUFFIXES', 'link-5');">SUFFIXES</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-string">&#x27;yaml&#x27;</tt><tt class="py-op">,</tt>        <tt class="py-comment"># standard yaml </tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">    <tt class="py-string">&#x27;json&#x27;</tt><tt class="py-op">,</tt>        <tt class="py-comment"># standard json</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-string">&#x27;xml&#x27;</tt><tt class="py-op">,</tt>         <tt class="py-comment"># xml.etree</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-string">&#x27;inix&#x27;</tt><tt class="py-op">,</tt>        <tt class="py-comment"># configparser + custom</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-string">&#x27;ini&#x27;</tt><tt class="py-op">,</tt>         <tt class="py-comment"># configparser + custom</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-string">&#x27;cfg&#x27;</tt><tt class="py-op">,</tt>         <tt class="py-comment"># configparser + custom</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-string">&#x27;conf&#x27;</tt><tt class="py-op">,</tt>        <tt class="py-comment"># configparser + custom</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-string">&#x27;properties&#x27;</tt><tt class="py-op">,</tt>  <tt class="py-comment"># configparser + custom</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="YapyUtilsCapabilityError"></a><div id="YapyUtilsCapabilityError-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="YapyUtilsCapabilityError-toggle" onclick="return toggle('YapyUtilsCapabilityError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="yapyutils.config.capabilities.YapyUtilsCapabilityError-class.html">YapyUtilsCapabilityError</a><tt class="py-op">(</tt><tt class="py-base-class">YapyUtilsConfigError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="YapyUtilsCapabilityError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="YapyUtilsCapabilityError-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-docstring">&quot;&quot;&quot;Common access error. </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    &quot;&quot;&quot;</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="YapyUtilsCapabilityOidError"></a><div id="YapyUtilsCapabilityOidError-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="YapyUtilsCapabilityOidError-toggle" onclick="return toggle('YapyUtilsCapabilityOidError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="yapyutils.config.capabilities.YapyUtilsCapabilityOidError-class.html">YapyUtilsCapabilityOidError</a><tt class="py-op">(</tt><tt class="py-base-class">YapyUtilsCapabilityError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="YapyUtilsCapabilityOidError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="YapyUtilsCapabilityOidError-expanded"><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-docstring">&quot;&quot;&quot;Requested object name is not present.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    &quot;&quot;&quot;</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt id="link-6" class="py-name" targets="Variable yapyutils.files.utilities._debug=yapyutils.files.utilities-module.html#_debug,Variable yapyutils.files.finder._debug=yapyutils.files.finder-module.html#_debug,Variable yapyutils.modules.loader._debug=yapyutils.modules.loader-module.html#_debug,Variable yapyutils.help._debug=yapyutils.help-module.html#_debug,Variable yapyutils.config._debug=yapyutils.config-module.html#_debug,Variable yapyutils._debug=yapyutils-module.html#_debug,Variable yapyutils.config.capabilities._debug=yapyutils.config.capabilities-module.html#_debug,Variable yapyutils.files._debug=yapyutils.files-module.html#_debug,Variable yapyutils.releases._debug=yapyutils.releases-module.html#_debug,Variable yapyutils.modules._debug=yapyutils.modules-module.html#_debug"><a title="yapyutils.files.utilities._debug
+yapyutils.files.finder._debug
+yapyutils.modules.loader._debug
+yapyutils.help._debug
+yapyutils.config._debug
+yapyutils._debug
+yapyutils.config.capabilities._debug
+yapyutils.files._debug
+yapyutils.releases._debug
+yapyutils.modules._debug" class="py-name" href="#" onclick="return doclink('link-6', '_debug', 'link-6');">_debug</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable yapyutils.files.utilities._verbose=yapyutils.files.utilities-module.html#_verbose,Variable yapyutils.files.finder._verbose=yapyutils.files.finder-module.html#_verbose,Variable yapyutils.modules.loader._verbose=yapyutils.modules.loader-module.html#_verbose,Variable yapyutils.help._verbose=yapyutils.help-module.html#_verbose,Variable yapyutils.config._verbose=yapyutils.config-module.html#_verbose,Variable yapyutils._verbose=yapyutils-module.html#_verbose,Variable yapyutils.config.capabilities._verbose=yapyutils.config.capabilities-module.html#_verbose,Variable yapyutils.files._verbose=yapyutils.files-module.html#_verbose,Variable yapyutils.releases._verbose=yapyutils.releases-module.html#_verbose,Variable yapyutils.modules._verbose=yapyutils.modules-module.html#_verbose"><a title="yapyutils.files.utilities._verbose
+yapyutils.files.finder._verbose
+yapyutils.modules.loader._verbose
+yapyutils.help._verbose
+yapyutils.config._verbose
+yapyutils._verbose
+yapyutils.config.capabilities._verbose
+yapyutils.files._verbose
+yapyutils.releases._verbose
+yapyutils.modules._verbose" class="py-name" href="#" onclick="return doclink('link-7', '_verbose', 'link-7');">_verbose</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-comment"># helper for multi-break</tt> </tt>
+<a name="_FileFound"></a><div id="_FileFound-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="_FileFound-toggle" onclick="return toggle('_FileFound');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="yapyutils.config.capabilities._FileFound-class.html">_FileFound</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_FileFound-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_FileFound-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">         </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="Capability"></a><div id="Capability-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="Capability-toggle" onclick="return toggle('Capability');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html">Capability</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Capability-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-docstring">&quot;&quot;&quot;Provides JSON based read-only configuration of capabilities.</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    This in particular comprises the priority based readout</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    of values and defaults. The structure hereby includes</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    specialization by subcomponents, where the missing value </tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    will be tried from the more general enclosing super</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">    component.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">    The access to structured data trees offers various method to</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">    access paths of nested node attributes. This comprises the</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">    creation as well as the readout.</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">    The following equivalent creation methods are supported, where</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">    &#x27;treenode&#x27; could be either the root node, or any subordinated</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">    branch::</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        treenode[&#x27;subnode0&#x27;][&#x27;subnode1&#x27;][&#x27;subnode7&#x27;] = value  # dynamic items</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        value = treenode(</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">                    &#x27;subnode0&#x27;, &#x27;subnode1&#x27;, &#x27;subnode7&#x27;,</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">                    create=True,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">                )  # dynamic items by &#x27;__call__&#x27;</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        value = treenode.subnode0.subnode1.subnode7           # static attribute addressing style</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">    The following equivalent readout methods are supported, where</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">    &#x27;treenode&#x27; could be either the root node, or any subordinated</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">    branch::</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        value = treenode[&#x27;subnode0&#x27;][&#x27;subnode1&#x27;][&#x27;subnode7&#x27;]  # dynamic items</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        value = treenode(&#x27;subnode0&#x27;, &#x27;subnode1&#x27;, &#x27;subnode7&#x27;)  # dynamic items by &#x27;__call__&#x27;</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        value = treenode.subnode0.subnode1.subnode7           # static attribute addressing style</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    &quot;&quot;&quot;</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable yapyutils.config.capabilities.Capability.M_FIRST=yapyutils.config.capabilities.Capability-class.html#M_FIRST"><a title="yapyutils.config.capabilities.Capability.M_FIRST" class="py-name" href="#" onclick="return doclink('link-8', 'M_FIRST', 'link-8');">M_FIRST</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt>   <tt class="py-comment"># use first matching node</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Variable yapyutils.config.capabilities.Capability.M_LAST=yapyutils.config.capabilities.Capability-class.html#M_LAST"><a title="yapyutils.config.capabilities.Capability.M_LAST" class="py-name" href="#" onclick="return doclink('link-9', 'M_LAST', 'link-9');">M_LAST</a></tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt>    <tt class="py-comment"># use last matching node</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Variable yapyutils.config.capabilities.Capability.M_ALL=yapyutils.config.capabilities.Capability-class.html#M_ALL"><a title="yapyutils.config.capabilities.Capability.M_ALL" class="py-name" href="#" onclick="return doclink('link-10', 'M_ALL', 'link-10');">M_ALL</a></tt> <tt class="py-op">=</tt> <tt class="py-number">3</tt>     <tt class="py-comment"># use all - iterate all matches</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt id="link-11" class="py-name" targets="Variable yapyutils.config.capabilities.Capability.match_map=yapyutils.config.capabilities.Capability-class.html#match_map"><a title="yapyutils.config.capabilities.Capability.match_map" class="py-name" href="#" onclick="return doclink('link-11', 'match_map', 'link-11');">match_map</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt id="link-12" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_FIRST" class="py-name" href="#" onclick="return doclink('link-12', 'M_FIRST', 'link-8');">M_FIRST</a></tt><tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt id="link-13" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_LAST" class="py-name" href="#" onclick="return doclink('link-13', 'M_LAST', 'link-9');">M_LAST</a></tt><tt class="py-op">:</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt id="link-14" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_ALL" class="py-name" href="#" onclick="return doclink('link-14', 'M_ALL', 'link-10');">M_ALL</a></tt><tt class="py-op">:</tt> <tt class="py-number">3</tt><tt class="py-op">,</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-string">&#x27;first&#x27;</tt><tt class="py-op">:</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-string">&#x27;last&#x27;</tt><tt class="py-op">:</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-string">&#x27;all&#x27;</tt><tt class="py-op">:</tt> <tt class="py-number">3</tt><tt class="py-op">,</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-op">}</tt>     </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="Capability.__init__"></a><div id="Capability.__init__-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="Capability.__init__-toggle" onclick="return toggle('Capability.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">data</tt><tt class="py-op">=</tt><tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.__init__-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">            data:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">                Configuration data::</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">                    data := (</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">                        &lt;dict&gt;             # in-memory JSON structure</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">                        &lt;file-path-name&gt;   # persistent JSON data</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">                    )</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">            None / initialized object</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">            YapyUtilsCapabilityError</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">dict</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-15" class="py-name" targets="Class yapyutils.config.capabilities.YapyUtilsCapabilityError=yapyutils.config.capabilities.YapyUtilsCapabilityError-class.html"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-15', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                <tt class="py-string">&quot;top &#x27;node&#x27; must be a &#x27;dict&#x27; == JSON object, got: &quot;</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                <tt class="py-op">)</tt>  </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="Capability.__getitem__"></a><div id="Capability.__getitem__-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="Capability.__getitem__-toggle" onclick="return toggle('Capability.__getitem__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#__getitem__">__getitem__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.__getitem__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.__getitem__-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Gets the value of the path within the data.</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">            key:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">                The value of the node within *data*::</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">                    key := (</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">                          &lt;single-key&gt;</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">                        | &lt;list-of-keys&gt;</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring">                        | &lt;tuple-of-keys&gt;</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring">                    )</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">            The value of the addressed node/value.</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-name">list</tt><tt class="py-op">,</tt> <tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">            <tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt class="py-name">key</tt><tt class="py-op">:</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                <tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-name">k</tt><tt class="py-op">]</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">res</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="Capability.__setitem__"></a><div id="Capability.__setitem__-def"><a name="L179"></a><tt class="py-lineno">179</tt> <a class="py-toggle" href="#" id="Capability.__setitem__-toggle" onclick="return toggle('Capability.__setitem__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#__setitem__">__setitem__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">,</tt> <tt class="py-param">val</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.__setitem__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.__setitem__-expanded"><a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Sets the value of the path within the data.</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-docstring">            key:</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-docstring">                The value of the node within *data*::</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-docstring">                    key := (</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">                          &lt;single-key&gt;</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">                        | &lt;list-of-keys&gt;</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">                        | &lt;tuple-of-keys&gt;</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">                    )</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">            val:</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-docstring">                The node/value to be set at the addressed path.</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-docstring">                Non present values are created, present are</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring">                replaced.</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-docstring">                REMARK: </tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-docstring">                    In case of lists the value of the key for</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-docstring">                    a non-present value has to be the increment of</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-docstring">                    the highest present key. Sparse lists are not</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"><tt class="py-docstring">                    supported. </tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-docstring">            The value of the addressed node/value.</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">list</tt><tt class="py-op">,</tt> <tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">            <tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">            <tt class="py-name">last</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt class="py-name">key</tt><tt class="py-op">:</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">res</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">list</tt><tt class="py-op">,</tt> <tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  <tt class="py-comment"># treat tuple equal until it raises</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">k</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">res</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">                        <tt class="py-name">res</tt> <tt class="py-op">=</tt> <tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-name">k</tt><tt class="py-op">]</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">                    <tt class="py-keyword">elif</tt> <tt class="py-name">k</tt> <tt class="py-op">==</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">res</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">last</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                            <tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">                         </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                        <tt class="py-name">res</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-keyword">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">                         </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">                        <tt class="py-name">last</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">            <tt class="py-name">res</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">val</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">val</tt> </tt>
+</div><a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="Capability.__setattr__"></a><div id="Capability.__setattr__-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="Capability.__setattr__-toggle" onclick="return toggle('Capability.__setattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#__setattr__">__setattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.__setattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.__setattr__-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Validates types of own data attributes.</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">            name:</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line"><tt class="py-docstring">                Name of the attribute. Following are reserved and</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"><tt class="py-docstring">                treated special:</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"><tt class="py-docstring">                * type: str - &#x27;data&#x27;</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"><tt class="py-docstring">                  The value is treated as the replacement of the internal</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"><tt class="py-docstring">                  data attribute. Replaces or creates the complete data</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"><tt class="py-docstring">                  of teh current instance.</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"><tt class="py-docstring">            value:</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"><tt class="py-docstring">                The value of the attribute. This by default superposes</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"><tt class="py-docstring">                present values by replacement. Non-present are created.</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"><tt class="py-docstring">            YapyUtilsCapabilityError</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">name</tt> <tt class="py-op">==</tt> <tt class="py-string">&#x27;data&#x27;</tt><tt class="py-op">:</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">            <tt class="py-comment">#</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">            <tt class="py-comment"># replacement of current managed data</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">            <tt class="py-comment">#</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">,</tt> <tt class="py-name">dict</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-16" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-16', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">                    <tt class="py-string">&quot;value must be a &#x27;dict&#x27; == JSON object, got: &quot;</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">                    <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">                    <tt class="py-op">)</tt>  </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">name</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">            <tt class="py-comment">#</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">            <tt class="py-comment"># any standard attribute with standard behavior</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">            <tt class="py-comment">#</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">object</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method yapyutils.config.capabilities.Capability.__setattr__()=yapyutils.config.capabilities.Capability-class.html#__setattr__"><a title="yapyutils.config.capabilities.Capability.__setattr__" class="py-name" href="#" onclick="return doclink('link-17', '__setattr__', 'link-17');">__setattr__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"> </tt>
+<a name="Capability.__getattr__"></a><div id="Capability.__getattr__-def"><a name="L269"></a><tt class="py-lineno">269</tt> <a class="py-toggle" href="#" id="Capability.__getattr__-toggle" onclick="return toggle('Capability.__getattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#__getattr__">__getattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.__getattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.__getattr__-expanded"><a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">name</tt> <tt class="py-op">==</tt> <tt class="py-string">&#x27;data&#x27;</tt><tt class="py-op">:</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">name</tt><tt class="py-op">]</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">tuple</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">             </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method yapyutils.config.capabilities.Capability.__getattr__()=yapyutils.config.capabilities.Capability-class.html#__getattr__"><a title="yapyutils.config.capabilities.Capability.__getattr__" class="py-name" href="#" onclick="return doclink('link-18', '__getattr__', 'link-18');">__getattr__</a></tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">             </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"><tt class="py-comment">#            return self.__dict__[name]</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-comment">#            return object.__getattr__(name)</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-19" class="py-name" targets="Class yapyutils.config.capabilities.Capability=yapyutils.config.capabilities.Capability-class.html"><a title="yapyutils.config.capabilities.Capability" class="py-name" href="#" onclick="return doclink('link-19', 'Capability', 'link-19');">Capability</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="yapyutils.config.capabilities.Capability.__getattr__" class="py-name" href="#" onclick="return doclink('link-20', '__getattr__', 'link-18');">__getattr__</a></tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line"> </tt>
+<a name="Capability.__call__"></a><div id="Capability.__call__-def"><a name="L289"></a><tt class="py-lineno">289</tt> <a class="py-toggle" href="#" id="Capability.__call__-toggle" onclick="return toggle('Capability.__call__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#__call__">__call__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">subpath</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.__call__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.__call__-expanded"><a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Readout the value of a node, or an attribute. The name binding</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"><tt class="py-docstring">        of the path is provided as a tuple of path items. </tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line"><tt class="py-docstring">            subpath:</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"><tt class="py-docstring">                The list of keys constituting a branch of a data tree.</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line"><tt class="py-docstring">                The *subpath* is treated as a branch of one of the nodes</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line"><tt class="py-docstring">                of a provided *searchpath* - which is by default the top node.</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line"><tt class="py-docstring">                The supported values are::</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line"><tt class="py-docstring">                    subpath := &lt;list-of-node-ids&gt;</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"><tt class="py-docstring">                    &lt;list-of-node-ids&gt; := &lt;node-id&gt; [&#x27;,&#x27; &lt;list-of-node-ids&gt;]</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"><tt class="py-docstring">                    node-id := (</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"><tt class="py-docstring">                          str            # strings as keys - objects/dict only</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line"><tt class="py-docstring">                        | int            # integers as index - lists only</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line"><tt class="py-docstring">                        | tuple | list   # set as choice of valid literal path items</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line"><tt class="py-docstring">                        | &lt;regexpr&gt;</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"><tt class="py-docstring">                    )</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"><tt class="py-docstring">                    regexpr := &lt;compiled-python-regular-expression&gt;</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line"><tt class="py-docstring">                    compiled-python-regular-expression := re.compile(&lt;regexpr&gt;)</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line"><tt class="py-docstring">                    regexpr := &quot;regular expression&quot;</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-docstring">            kargs:</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"><tt class="py-docstring">                searchpath:</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"><tt class="py-docstring">                    Optional search path for the match of the provided </tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"><tt class="py-docstring">                    address *subpath*. The provided *subpath* is applied</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line"><tt class="py-docstring">                    to each node of the *searchpath* in accordance to the </tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"><tt class="py-docstring">                    *direction* option. This provides the search and </tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"><tt class="py-docstring">                    enumeration of side branches::</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line"><tt class="py-docstring">                        searchpath := &lt;path-item-list&gt; </tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"><tt class="py-docstring">                        path-item-list := &lt;path-item&gt; [, &lt;path-item-list&gt;]</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"><tt class="py-docstring">                        path-item := (</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line"><tt class="py-docstring">                              str  # item name </tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line"><tt class="py-docstring">                            | int  # item index</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"><tt class="py-docstring">                        ) </tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"><tt class="py-docstring">                        default := &lt;top-node&gt;</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"><tt class="py-docstring">                    The search path entries has to be actually present by default.</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"><tt class="py-docstring">                    These  could be either created by loading a complete tree</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line"><tt class="py-docstring">                    structure, or by using the *Capabilities.create()* member.</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"><tt class="py-docstring">                    See also parameter &#x27;strict&#x27;.</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line"><tt class="py-docstring">                direction:</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line"><tt class="py-docstring">                    The search direction of the *subpath* within the </tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line"><tt class="py-docstring">                    *searchpath*. In case of multiple superpositioned</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line"><tt class="py-docstring">                    attributes the first traversed match.</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line"><tt class="py-docstring">                    The provided values are::</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line"><tt class="py-docstring">                        direction := (</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line"><tt class="py-docstring">                              up   | 0  | False # search from right-to-left</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line"><tt class="py-docstring">                            | down | 1  | True  # search from left-to-right</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line"><tt class="py-docstring">                        default:= up</tt> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line"><tt class="py-docstring">                match:</tt> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line"><tt class="py-docstring">                    Sets the match criteria for the search operation.</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line"><tt class="py-docstring">                    Interferes with *direction*::</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"><tt class="py-docstring">                        match := (</tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line"><tt class="py-docstring">                              M_FIRST | &#x27;first&#x27;   # use first matching node</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"><tt class="py-docstring">                            | M_LAST  | &#x27;last&#x27;    # use last matching node</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"><tt class="py-docstring">                            | M_ALL   | &#x27;all&#x27;     # use all - iterate all matches</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line"><tt class="py-docstring">                        default := M_FIRST</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line"><tt class="py-docstring">                partial:</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"><tt class="py-docstring">                    Enables the return of partial sub paths in case the requested</tt> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line"><tt class="py-docstring">                    path is not completely present. ::</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line"><tt class="py-docstring">                        partial := (</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line"><tt class="py-docstring">                              True   # when not completely present, the longest </tt> </tt>
+<a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line"><tt class="py-docstring">                                     # existing part is returned, the completeness</tt> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line"><tt class="py-docstring">                                     # is provided by the result attribute &lt;partial&gt;</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line"><tt class="py-docstring">                            | False  # when not completely present an exception</tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line"><tt class="py-docstring">                                     # is raised </tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"><tt class="py-docstring">                strict:</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line"><tt class="py-docstring">                    Controls the required consistency. This comprises:</tt> </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line"><tt class="py-docstring">                    1. the presence of the search path entries</tt> </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line"><tt class="py-docstring">                    2. the presence of the requested subpath within the set</tt> </tt>
+<a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line"><tt class="py-docstring">                       of search paths </tt> </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line"><tt class="py-docstring">            In case of a match returns the tuple::</tt> </tt>
+<a name="L383"></a><tt class="py-lineno">383</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line"><tt class="py-docstring">                return := (&lt;attr-value-path&gt;, &lt;attr-value&gt;, &lt;partial&gt;)</tt> </tt>
+<a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L386"></a><tt class="py-lineno">386</tt>  <tt class="py-line"><tt class="py-docstring">                attr-value-path := (</tt> </tt>
+<a name="L387"></a><tt class="py-lineno">387</tt>  <tt class="py-line"><tt class="py-docstring">                      &quot;the list of keys of the top-down path&quot;</tt> </tt>
+<a name="L388"></a><tt class="py-lineno">388</tt>  <tt class="py-line"><tt class="py-docstring">                    | &quot;empty list when no item exists&quot;        # see &lt;complete&gt;</tt> </tt>
+<a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line"><tt class="py-docstring">                )</tt> </tt>
+<a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line"><tt class="py-docstring">                attr-value := &quot;value of the targeted node/attribute&quot;</tt> </tt>
+<a name="L391"></a><tt class="py-lineno">391</tt>  <tt class="py-line"><tt class="py-docstring">                partial := (</tt> </tt>
+<a name="L392"></a><tt class="py-lineno">392</tt>  <tt class="py-line"><tt class="py-docstring">                      False   # the complete requested path</tt> </tt>
+<a name="L393"></a><tt class="py-lineno">393</tt>  <tt class="py-line"><tt class="py-docstring">                    | True    # the actually present part of the path</tt> </tt>
+<a name="L394"></a><tt class="py-lineno">394</tt>  <tt class="py-line"><tt class="py-docstring">                )</tt> </tt>
+<a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line"><tt class="py-docstring">            Else raises *YapyUtilsCapabilityOidError*.</tt> </tt>
+<a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line"><tt class="py-docstring">            YapyUtilsCapabilityOidError</tt> </tt>
+<a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L401"></a><tt class="py-lineno">401</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L403"></a><tt class="py-lineno">403</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L404"></a><tt class="py-lineno">404</tt>  <tt class="py-line"> </tt>
+<a name="L405"></a><tt class="py-lineno">405</tt>  <tt class="py-line">        <tt class="py-name">_srch</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method yapyutils.config.capabilities.Capability.get()=yapyutils.config.capabilities.Capability-class.html#get"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-21', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;searchpath&#x27;</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L406"></a><tt class="py-lineno">406</tt>  <tt class="py-line">        <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-22', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;direction&#x27;</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L407"></a><tt class="py-lineno">407</tt>  <tt class="py-line">        <tt class="py-name">_match</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-23', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;match&#x27;</tt><tt class="py-op">,</tt> <tt id="link-24" class="py-name"><a title="yapyutils.config.capabilities.Capability" class="py-name" href="#" onclick="return doclink('link-24', 'Capability', 'link-19');">Capability</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_FIRST" class="py-name" href="#" onclick="return doclink('link-25', 'M_FIRST', 'link-8');">M_FIRST</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L408"></a><tt class="py-lineno">408</tt>  <tt class="py-line">         </tt>
+<a name="L409"></a><tt class="py-lineno">409</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">tuple</tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L410"></a><tt class="py-lineno">410</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-26" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-26', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L411"></a><tt class="py-lineno">411</tt>  <tt class="py-line">                <tt class="py-string">&quot;search path requires &#x27;tuple&#x27; or&#x27;list&#x27;, got: &quot;</tt> </tt>
+<a name="L412"></a><tt class="py-lineno">412</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">)</tt> </tt>
+<a name="L413"></a><tt class="py-lineno">413</tt>  <tt class="py-line">                <tt class="py-op">)</tt>  </tt>
+<a name="L414"></a><tt class="py-lineno">414</tt>  <tt class="py-line"> </tt>
+<a name="L415"></a><tt class="py-lineno">415</tt>  <tt class="py-line">        <tt class="py-comment">#</tt> </tt>
+<a name="L416"></a><tt class="py-lineno">416</tt>  <tt class="py-line">        <tt class="py-comment"># match criteria</tt> </tt>
+<a name="L417"></a><tt class="py-lineno">417</tt>  <tt class="py-line">        <tt class="py-comment">#</tt> </tt>
+<a name="L418"></a><tt class="py-lineno">418</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L419"></a><tt class="py-lineno">419</tt>  <tt class="py-line">            <tt class="py-name">_match</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="yapyutils.config.capabilities.Capability.match_map" class="py-name" href="#" onclick="return doclink('link-27', 'match_map', 'link-11');">match_map</a></tt><tt class="py-op">[</tt><tt class="py-name">_match</tt><tt class="py-op">]</tt> </tt>
+<a name="L420"></a><tt class="py-lineno">420</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IndexError</tt><tt class="py-op">:</tt> </tt>
+<a name="L421"></a><tt class="py-lineno">421</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L422"></a><tt class="py-lineno">422</tt>  <tt class="py-line">                <tt class="py-name">_match</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="yapyutils.config.capabilities.Capability.match_map" class="py-name" href="#" onclick="return doclink('link-28', 'match_map', 'link-11');">match_map</a></tt><tt class="py-op">[</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_match</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt>  </tt>
+<a name="L423"></a><tt class="py-lineno">423</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L424"></a><tt class="py-lineno">424</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-29" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-29', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L425"></a><tt class="py-lineno">425</tt>  <tt class="py-line">                    <tt class="py-string">&quot;valid match are (first, %d, last, %d, all, %d,), got: %s&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt> </tt>
+<a name="L426"></a><tt class="py-lineno">426</tt>  <tt class="py-line">                        <tt id="link-30" class="py-name"><a title="yapyutils.config.capabilities.Capability" class="py-name" href="#" onclick="return doclink('link-30', 'Capability', 'link-19');">Capability</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_FIRST" class="py-name" href="#" onclick="return doclink('link-31', 'M_FIRST', 'link-8');">M_FIRST</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L427"></a><tt class="py-lineno">427</tt>  <tt class="py-line">                        <tt id="link-32" class="py-name"><a title="yapyutils.config.capabilities.Capability" class="py-name" href="#" onclick="return doclink('link-32', 'Capability', 'link-19');">Capability</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_LAST" class="py-name" href="#" onclick="return doclink('link-33', 'M_LAST', 'link-9');">M_LAST</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L428"></a><tt class="py-lineno">428</tt>  <tt class="py-line">                        <tt id="link-34" class="py-name"><a title="yapyutils.config.capabilities.Capability" class="py-name" href="#" onclick="return doclink('link-34', 'Capability', 'link-19');">Capability</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="yapyutils.config.capabilities.Capability.M_ALL" class="py-name" href="#" onclick="return doclink('link-35', 'M_ALL', 'link-10');">M_ALL</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L429"></a><tt class="py-lineno">429</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_match</tt><tt class="py-op">)</tt> </tt>
+<a name="L430"></a><tt class="py-lineno">430</tt>  <tt class="py-line">                    <tt class="py-op">)</tt> </tt>
+<a name="L431"></a><tt class="py-lineno">431</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L432"></a><tt class="py-lineno">432</tt>  <tt class="py-line"> </tt>
+<a name="L433"></a><tt class="py-lineno">433</tt>  <tt class="py-line">        <tt class="py-comment">#</tt> </tt>
+<a name="L434"></a><tt class="py-lineno">434</tt>  <tt class="py-line">        <tt class="py-comment"># search direction</tt> </tt>
+<a name="L435"></a><tt class="py-lineno">435</tt>  <tt class="py-line">        <tt class="py-comment">#</tt> </tt>
+<a name="L436"></a><tt class="py-lineno">436</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-keyword">True</tt><tt class="py-op">,</tt> <tt class="py-keyword">False</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L437"></a><tt class="py-lineno">437</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L438"></a><tt class="py-lineno">438</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L439"></a><tt class="py-lineno">439</tt>  <tt class="py-line">            <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L440"></a><tt class="py-lineno">440</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&#x27;up&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;0&#x27;</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L441"></a><tt class="py-lineno">441</tt>  <tt class="py-line">                <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L442"></a><tt class="py-lineno">442</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&#x27;down&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;1&#x27;</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L443"></a><tt class="py-lineno">443</tt>  <tt class="py-line">                <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-keyword">True</tt> </tt>
+<a name="L444"></a><tt class="py-lineno">444</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L445"></a><tt class="py-lineno">445</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-36" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-36', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L446"></a><tt class="py-lineno">446</tt>  <tt class="py-line">                    <tt class="py-string">&quot;valid directions are (up, 0, down, 1), got: &quot;</tt> </tt>
+<a name="L447"></a><tt class="py-lineno">447</tt>  <tt class="py-line">                    <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L448"></a><tt class="py-lineno">448</tt>  <tt class="py-line">                    <tt class="py-op">)</tt>  </tt>
+<a name="L449"></a><tt class="py-lineno">449</tt>  <tt class="py-line"> </tt>
+<a name="L450"></a><tt class="py-lineno">450</tt>  <tt class="py-line">        <tt class="py-comment"># collect the nodes on the searchpath</tt> </tt>
+<a name="L451"></a><tt class="py-lineno">451</tt>  <tt class="py-line">        <tt class="py-name">_path_nodes</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">,</tt><tt class="py-op">]</tt> </tt>
+<a name="L452"></a><tt class="py-lineno">452</tt>  <tt class="py-line">        <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> </tt>
+<a name="L453"></a><tt class="py-lineno">453</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_srch</tt><tt class="py-op">:</tt> </tt>
+<a name="L454"></a><tt class="py-lineno">454</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">_srch</tt><tt class="py-op">:</tt> </tt>
+<a name="L455"></a><tt class="py-lineno">455</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L456"></a><tt class="py-lineno">456</tt>  <tt class="py-line">                    <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">_cur</tt><tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">]</tt> </tt>
+<a name="L457"></a><tt class="py-lineno">457</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">IndexError</tt><tt class="py-op">,</tt> <tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">TypeError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L458"></a><tt class="py-lineno">458</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt id="link-37" class="py-name" targets="Class yapyutils.config.capabilities.YapyUtilsCapabilityOidError=yapyutils.config.capabilities.YapyUtilsCapabilityOidError-class.html"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityOidError" class="py-name" href="#" onclick="return doclink('link-37', 'YapyUtilsCapabilityOidError', 'link-37');">YapyUtilsCapabilityOidError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L459"></a><tt class="py-lineno">459</tt>  <tt class="py-line">                            <tt class="py-string">&quot;invalid search path: %s\n see: %s\n&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt> </tt>
+<a name="L460"></a><tt class="py-lineno">460</tt>  <tt class="py-line">                                <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L461"></a><tt class="py-lineno">461</tt>  <tt class="py-line">                                <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L462"></a><tt class="py-lineno">462</tt>  <tt class="py-line">                            <tt class="py-op">)</tt> </tt>
+<a name="L463"></a><tt class="py-lineno">463</tt>  <tt class="py-line">                        <tt class="py-op">)</tt> </tt>
+<a name="L464"></a><tt class="py-lineno">464</tt>  <tt class="py-line"> </tt>
+<a name="L465"></a><tt class="py-lineno">465</tt>  <tt class="py-line">                <tt class="py-name">_path_nodes</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">_cur</tt><tt class="py-op">)</tt> </tt>
+<a name="L466"></a><tt class="py-lineno">466</tt>  <tt class="py-line"> </tt>
+<a name="L467"></a><tt class="py-lineno">467</tt>  <tt class="py-line">        <tt class="py-comment"># revert for bottom-up search direction        </tt> </tt>
+<a name="L468"></a><tt class="py-lineno">468</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L469"></a><tt class="py-lineno">469</tt>  <tt class="py-line">            <tt class="py-comment"># upward - up | 0 | False</tt> </tt>
+<a name="L470"></a><tt class="py-lineno">470</tt>  <tt class="py-line">            <tt class="py-name">_path_nodes</tt> <tt class="py-op">=</tt> <tt class="py-name">reversed</tt><tt class="py-op">(</tt><tt class="py-name">_path_nodes</tt><tt class="py-op">)</tt> </tt>
+<a name="L471"></a><tt class="py-lineno">471</tt>  <tt class="py-line"> </tt>
+<a name="L472"></a><tt class="py-lineno">472</tt>  <tt class="py-line">        <tt class="py-comment"># now search the subpath for each node of the search path</tt> </tt>
+<a name="L473"></a><tt class="py-lineno">473</tt>  <tt class="py-line">        <tt class="py-comment"># first match wins</tt> </tt>
+<a name="L474"></a><tt class="py-lineno">474</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">_pn</tt> <tt class="py-keyword">in</tt> <tt class="py-name">_path_nodes</tt><tt class="py-op">:</tt> </tt>
+<a name="L475"></a><tt class="py-lineno">475</tt>  <tt class="py-line">            <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">_pn</tt> </tt>
+<a name="L476"></a><tt class="py-lineno">476</tt>  <tt class="py-line">            <tt class="py-name">_idx_subpath</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt>  <tt class="py-comment"># reset here</tt> </tt>
+<a name="L477"></a><tt class="py-lineno">477</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">subpath</tt><tt class="py-op">:</tt> </tt>
+<a name="L478"></a><tt class="py-lineno">478</tt>  <tt class="py-line">                <tt class="py-name">_excep</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L479"></a><tt class="py-lineno">479</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L480"></a><tt class="py-lineno">480</tt>  <tt class="py-line">                    <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">_cur</tt><tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">]</tt> </tt>
+<a name="L481"></a><tt class="py-lineno">481</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">IndexError</tt><tt class="py-op">,</tt> <tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">TypeError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L482"></a><tt class="py-lineno">482</tt>  <tt class="py-line">                    <tt class="py-comment"># continue with next level - only when nodes do not fit</tt> </tt>
+<a name="L483"></a><tt class="py-lineno">483</tt>  <tt class="py-line">                    <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L484"></a><tt class="py-lineno">484</tt>  <tt class="py-line">                    <tt class="py-name">_excep</tt> <tt class="py-op">=</tt> <tt class="py-keyword">True</tt> </tt>
+<a name="L485"></a><tt class="py-lineno">485</tt>  <tt class="py-line">                    <tt class="py-keyword">break</tt> </tt>
+<a name="L486"></a><tt class="py-lineno">486</tt>  <tt class="py-line">                 </tt>
+<a name="L487"></a><tt class="py-lineno">487</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_excep</tt><tt class="py-op">:</tt> </tt>
+<a name="L488"></a><tt class="py-lineno">488</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt>  <tt class="py-comment"># has hit a regular match</tt> </tt>
+<a name="L489"></a><tt class="py-lineno">489</tt>  <tt class="py-line"> </tt>
+<a name="L490"></a><tt class="py-lineno">490</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_excep</tt><tt class="py-op">:</tt> </tt>
+<a name="L491"></a><tt class="py-lineno">491</tt>  <tt class="py-line">            <tt class="py-comment"># no match</tt> </tt>
+<a name="L492"></a><tt class="py-lineno">492</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-38" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityOidError" class="py-name" href="#" onclick="return doclink('link-38', 'YapyUtilsCapabilityOidError', 'link-37');">YapyUtilsCapabilityOidError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L493"></a><tt class="py-lineno">493</tt>  <tt class="py-line">                    <tt class="py-string">&quot;Missing subpath hook&quot;</tt> </tt>
+<a name="L494"></a><tt class="py-lineno">494</tt>  <tt class="py-line">                    <tt class="py-string">&quot;\n  searchpath:   %s&quot;</tt> </tt>
+<a name="L495"></a><tt class="py-lineno">495</tt>  <tt class="py-line">                    <tt class="py-string">&quot;\n  subpath hook: %s&quot;</tt> </tt>
+<a name="L496"></a><tt class="py-lineno">496</tt>  <tt class="py-line">                    <tt class="py-string">&quot;\n  subpath:      %s\n&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt> </tt>
+<a name="L497"></a><tt class="py-lineno">497</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L498"></a><tt class="py-lineno">498</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">subpath</tt><tt class="py-op">[</tt><tt class="py-name">_idx_subpath</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L499"></a><tt class="py-lineno">499</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">subpath</tt><tt class="py-op">)</tt> </tt>
+<a name="L500"></a><tt class="py-lineno">500</tt>  <tt class="py-line">                    <tt class="py-op">)</tt> </tt>
+<a name="L501"></a><tt class="py-lineno">501</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L502"></a><tt class="py-lineno">502</tt>  <tt class="py-line"> </tt>
+<a name="L503"></a><tt class="py-lineno">503</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">_cur</tt> </tt>
+</div><a name="L504"></a><tt class="py-lineno">504</tt>  <tt class="py-line"> </tt>
+<a name="L505"></a><tt class="py-lineno">505</tt>  <tt class="py-line"><tt class="py-comment">#     def __str__(self):</tt> </tt>
+<a name="L506"></a><tt class="py-lineno">506</tt>  <tt class="py-line"><tt class="py-comment">#         res = &#x27;&#x27;</tt> </tt>
+<a name="L507"></a><tt class="py-lineno">507</tt>  <tt class="py-line"><tt class="py-comment">#         return res</tt> </tt>
+<a name="L508"></a><tt class="py-lineno">508</tt>  <tt class="py-line"> </tt>
+<a name="Capability.create"></a><div id="Capability.create-def"><a name="L509"></a><tt class="py-lineno">509</tt> <a class="py-toggle" href="#" id="Capability.create-toggle" onclick="return toggle('Capability.create');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#create">create</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">subpath</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.create-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.create-expanded"><a name="L510"></a><tt class="py-lineno">510</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Creates a subpath to a given node, default is from top. </tt> </tt>
+<a name="L511"></a><tt class="py-lineno">511</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L512"></a><tt class="py-lineno">512</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L513"></a><tt class="py-lineno">513</tt>  <tt class="py-line"><tt class="py-docstring">            subpath:</tt> </tt>
+<a name="L514"></a><tt class="py-lineno">514</tt>  <tt class="py-line"><tt class="py-docstring">                The list of keys constituting a branch of a data tree.</tt> </tt>
+<a name="L515"></a><tt class="py-lineno">515</tt>  <tt class="py-line"><tt class="py-docstring">                The *subpath* is treated as a branch of one of the nodes</tt> </tt>
+<a name="L516"></a><tt class="py-lineno">516</tt>  <tt class="py-line"><tt class="py-docstring">                of a provided *searchpath* - which is by default the top node.</tt> </tt>
+<a name="L517"></a><tt class="py-lineno">517</tt>  <tt class="py-line"><tt class="py-docstring">                The supported values are::</tt> </tt>
+<a name="L518"></a><tt class="py-lineno">518</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L519"></a><tt class="py-lineno">519</tt>  <tt class="py-line"><tt class="py-docstring">                    subpath := &lt;list-of-node-ids&gt;</tt> </tt>
+<a name="L520"></a><tt class="py-lineno">520</tt>  <tt class="py-line"><tt class="py-docstring">                    &lt;list-of-node-ids&gt; := &lt;node-id&gt; [&#x27;,&#x27; &lt;list-of-node-ids&gt;]</tt> </tt>
+<a name="L521"></a><tt class="py-lineno">521</tt>  <tt class="py-line"><tt class="py-docstring">                    node-id := (</tt> </tt>
+<a name="L522"></a><tt class="py-lineno">522</tt>  <tt class="py-line"><tt class="py-docstring">                          str            # strings as keys - objects/dict only</tt> </tt>
+<a name="L523"></a><tt class="py-lineno">523</tt>  <tt class="py-line"><tt class="py-docstring">                        | int            # integers as index - lists only</tt> </tt>
+<a name="L524"></a><tt class="py-lineno">524</tt>  <tt class="py-line"><tt class="py-docstring">                        | tuple | list   # set as choice of valid literal path items</tt> </tt>
+<a name="L525"></a><tt class="py-lineno">525</tt>  <tt class="py-line"><tt class="py-docstring">                        | &lt;regexpr&gt;</tt> </tt>
+<a name="L526"></a><tt class="py-lineno">526</tt>  <tt class="py-line"><tt class="py-docstring">                    )</tt> </tt>
+<a name="L527"></a><tt class="py-lineno">527</tt>  <tt class="py-line"><tt class="py-docstring">                    regexpr := &lt;compiled-python-regular-expression&gt;</tt> </tt>
+<a name="L528"></a><tt class="py-lineno">528</tt>  <tt class="py-line"><tt class="py-docstring">                    compiled-python-regular-expression := re.compile(&lt;regexpr&gt;)</tt> </tt>
+<a name="L529"></a><tt class="py-lineno">529</tt>  <tt class="py-line"><tt class="py-docstring">                    regexpr := &quot;regular expression&quot;</tt> </tt>
+<a name="L530"></a><tt class="py-lineno">530</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L531"></a><tt class="py-lineno">531</tt>  <tt class="py-line"><tt class="py-docstring">            kargs:</tt> </tt>
+<a name="L532"></a><tt class="py-lineno">532</tt>  <tt class="py-line"><tt class="py-docstring">                hook:</tt> </tt>
+<a name="L533"></a><tt class="py-lineno">533</tt>  <tt class="py-line"><tt class="py-docstring">                    Optional node as parent of the insertion point for the new sub path.</tt> </tt>
+<a name="L534"></a><tt class="py-lineno">534</tt>  <tt class="py-line"><tt class="py-docstring">                    The node must exist. ::</tt> </tt>
+<a name="L535"></a><tt class="py-lineno">535</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L536"></a><tt class="py-lineno">536</tt>  <tt class="py-line"><tt class="py-docstring">                        hook := (</tt> </tt>
+<a name="L537"></a><tt class="py-lineno">537</tt>  <tt class="py-line"><tt class="py-docstring">                            </tt> </tt>
+<a name="L538"></a><tt class="py-lineno">538</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L539"></a><tt class="py-lineno">539</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L540"></a><tt class="py-lineno">540</tt>  <tt class="py-line"><tt class="py-docstring">                    search path for the match of the provided </tt> </tt>
+<a name="L541"></a><tt class="py-lineno">541</tt>  <tt class="py-line"><tt class="py-docstring">                    address *subpath*. The provided *subpath* is applied</tt> </tt>
+<a name="L542"></a><tt class="py-lineno">542</tt>  <tt class="py-line"><tt class="py-docstring">                    to each node of the *searchpath* in accordance to the </tt> </tt>
+<a name="L543"></a><tt class="py-lineno">543</tt>  <tt class="py-line"><tt class="py-docstring">                    *direction* option.</tt> </tt>
+<a name="L544"></a><tt class="py-lineno">544</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L545"></a><tt class="py-lineno">545</tt>  <tt class="py-line"><tt class="py-docstring">                    Default := &lt;top-node&gt;</tt> </tt>
+<a name="L546"></a><tt class="py-lineno">546</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L547"></a><tt class="py-lineno">547</tt>  <tt class="py-line"><tt class="py-docstring">                create:</tt> </tt>
+<a name="L548"></a><tt class="py-lineno">548</tt>  <tt class="py-line"><tt class="py-docstring">                    Create missing entities of the requested path.</tt> </tt>
+<a name="L549"></a><tt class="py-lineno">549</tt>  <tt class="py-line"><tt class="py-docstring">                    The provided value is the value of the final node::</tt> </tt>
+<a name="L550"></a><tt class="py-lineno">550</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L551"></a><tt class="py-lineno">551</tt>  <tt class="py-line"><tt class="py-docstring">                        create := &lt;value-of-node&gt;</tt> </tt>
+<a name="L552"></a><tt class="py-lineno">552</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L553"></a><tt class="py-lineno">553</tt>  <tt class="py-line"><tt class="py-docstring">                        value-of-node := &lt;valid-json-node-type&gt;</tt> </tt>
+<a name="L554"></a><tt class="py-lineno">554</tt>  <tt class="py-line"><tt class="py-docstring">                        valid-json-node-type := (</tt> </tt>
+<a name="L555"></a><tt class="py-lineno">555</tt>  <tt class="py-line"><tt class="py-docstring">                                              int | float</tt> </tt>
+<a name="L556"></a><tt class="py-lineno">556</tt>  <tt class="py-line"><tt class="py-docstring">                                            | str                  # unicode</tt> </tt>
+<a name="L557"></a><tt class="py-lineno">557</tt>  <tt class="py-line"><tt class="py-docstring">                                            | dict | list</tt> </tt>
+<a name="L558"></a><tt class="py-lineno">558</tt>  <tt class="py-line"><tt class="py-docstring">                                            | None | True | False  # equivalent: null|true|false</tt> </tt>
+<a name="L559"></a><tt class="py-lineno">559</tt>  <tt class="py-line"><tt class="py-docstring">                                            )</tt> </tt>
+<a name="L560"></a><tt class="py-lineno">560</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L561"></a><tt class="py-lineno">561</tt>  <tt class="py-line"><tt class="py-docstring">                        default := None</tt> </tt>
+<a name="L562"></a><tt class="py-lineno">562</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L563"></a><tt class="py-lineno">563</tt>  <tt class="py-line"><tt class="py-docstring">                direction:</tt> </tt>
+<a name="L564"></a><tt class="py-lineno">564</tt>  <tt class="py-line"><tt class="py-docstring">                    The search direction of the *subpath* within the </tt> </tt>
+<a name="L565"></a><tt class="py-lineno">565</tt>  <tt class="py-line"><tt class="py-docstring">                    *searchpath*. In case of multiple superpositioning</tt> </tt>
+<a name="L566"></a><tt class="py-lineno">566</tt>  <tt class="py-line"><tt class="py-docstring">                    attributes the first match of traversion. </tt> </tt>
+<a name="L567"></a><tt class="py-lineno">567</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L568"></a><tt class="py-lineno">568</tt>  <tt class="py-line"><tt class="py-docstring">                    The provided values are::</tt> </tt>
+<a name="L569"></a><tt class="py-lineno">569</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L570"></a><tt class="py-lineno">570</tt>  <tt class="py-line"><tt class="py-docstring">                        direction := (</tt> </tt>
+<a name="L571"></a><tt class="py-lineno">571</tt>  <tt class="py-line"><tt class="py-docstring">                              up   | 0  | False # search from right-to-left</tt> </tt>
+<a name="L572"></a><tt class="py-lineno">572</tt>  <tt class="py-line"><tt class="py-docstring">                            | down | 1  | True  # search from left-to-right</tt> </tt>
+<a name="L573"></a><tt class="py-lineno">573</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L574"></a><tt class="py-lineno">574</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L575"></a><tt class="py-lineno">575</tt>  <tt class="py-line"><tt class="py-docstring">                    Default:= up</tt> </tt>
+<a name="L576"></a><tt class="py-lineno">576</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L577"></a><tt class="py-lineno">577</tt>  <tt class="py-line"><tt class="py-docstring">                match:</tt> </tt>
+<a name="L578"></a><tt class="py-lineno">578</tt>  <tt class="py-line"><tt class="py-docstring">                    Sets the match criteria for the search operation.</tt> </tt>
+<a name="L579"></a><tt class="py-lineno">579</tt>  <tt class="py-line"><tt class="py-docstring">                    Interferes with *direction*::</tt> </tt>
+<a name="L580"></a><tt class="py-lineno">580</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L581"></a><tt class="py-lineno">581</tt>  <tt class="py-line"><tt class="py-docstring">                        match := (</tt> </tt>
+<a name="L582"></a><tt class="py-lineno">582</tt>  <tt class="py-line"><tt class="py-docstring">                              M_FIRST   # use first matching node</tt> </tt>
+<a name="L583"></a><tt class="py-lineno">583</tt>  <tt class="py-line"><tt class="py-docstring">                            | M_LAST    # use last matching node</tt> </tt>
+<a name="L584"></a><tt class="py-lineno">584</tt>  <tt class="py-line"><tt class="py-docstring">                            | M_ALL     # use all - iterate all matches</tt> </tt>
+<a name="L585"></a><tt class="py-lineno">585</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L586"></a><tt class="py-lineno">586</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L587"></a><tt class="py-lineno">587</tt>  <tt class="py-line"><tt class="py-docstring">                        default :=</tt> </tt>
+<a name="L588"></a><tt class="py-lineno">588</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L589"></a><tt class="py-lineno">589</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L590"></a><tt class="py-lineno">590</tt>  <tt class="py-line"><tt class="py-docstring">            In case of a match returns the tuple::</tt> </tt>
+<a name="L591"></a><tt class="py-lineno">591</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L592"></a><tt class="py-lineno">592</tt>  <tt class="py-line"><tt class="py-docstring">                return := (&lt;attr-value-path&gt;, &lt;attr-value&gt;)</tt> </tt>
+<a name="L593"></a><tt class="py-lineno">593</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L594"></a><tt class="py-lineno">594</tt>  <tt class="py-line"><tt class="py-docstring">                attr-value-path := &quot;the list of keys of the top-down path&quot;</tt> </tt>
+<a name="L595"></a><tt class="py-lineno">595</tt>  <tt class="py-line"><tt class="py-docstring">                attr-value := &quot;value in accordance to the type of the attribute&quot;</tt> </tt>
+<a name="L596"></a><tt class="py-lineno">596</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L597"></a><tt class="py-lineno">597</tt>  <tt class="py-line"><tt class="py-docstring">            Else raises *YapyUtilsCapabilityOidError*.</tt> </tt>
+<a name="L598"></a><tt class="py-lineno">598</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L599"></a><tt class="py-lineno">599</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L600"></a><tt class="py-lineno">600</tt>  <tt class="py-line"><tt class="py-docstring">            YapyUtilsCapabilityOidError</tt> </tt>
+<a name="L601"></a><tt class="py-lineno">601</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L602"></a><tt class="py-lineno">602</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L603"></a><tt class="py-lineno">603</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L604"></a><tt class="py-lineno">604</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L605"></a><tt class="py-lineno">605</tt>  <tt class="py-line"> </tt>
+<a name="L606"></a><tt class="py-lineno">606</tt>  <tt class="py-line">        <tt class="py-name">_srch</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-39', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;searchpath&#x27;</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L607"></a><tt class="py-lineno">607</tt>  <tt class="py-line">        <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-40', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;direction&#x27;</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L608"></a><tt class="py-lineno">608</tt>  <tt class="py-line">         </tt>
+<a name="L609"></a><tt class="py-lineno">609</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L610"></a><tt class="py-lineno">610</tt>  <tt class="py-line">            <tt class="py-name">_create_value</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">[</tt><tt class="py-string">&#x27;create&#x27;</tt><tt class="py-op">]</tt> </tt>
+<a name="L611"></a><tt class="py-lineno">611</tt>  <tt class="py-line">            <tt class="py-name">_create</tt> <tt class="py-op">=</tt> <tt class="py-keyword">True</tt> </tt>
+<a name="L612"></a><tt class="py-lineno">612</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L613"></a><tt class="py-lineno">613</tt>  <tt class="py-line">            <tt class="py-name">_create_value</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L614"></a><tt class="py-lineno">614</tt>  <tt class="py-line">            <tt class="py-name">_create</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L615"></a><tt class="py-lineno">615</tt>  <tt class="py-line"> </tt>
+<a name="L616"></a><tt class="py-lineno">616</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">tuple</tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L617"></a><tt class="py-lineno">617</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-41" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-41', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L618"></a><tt class="py-lineno">618</tt>  <tt class="py-line">                <tt class="py-string">&quot;searchpath requires &#x27;tuple&#x27; or&#x27;list&#x27;, got: &quot;</tt> </tt>
+<a name="L619"></a><tt class="py-lineno">619</tt>  <tt class="py-line">                <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">)</tt> </tt>
+<a name="L620"></a><tt class="py-lineno">620</tt>  <tt class="py-line">                <tt class="py-op">)</tt>  </tt>
+<a name="L621"></a><tt class="py-lineno">621</tt>  <tt class="py-line"> </tt>
+<a name="L622"></a><tt class="py-lineno">622</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-keyword">True</tt><tt class="py-op">,</tt> <tt class="py-keyword">False</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L623"></a><tt class="py-lineno">623</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L624"></a><tt class="py-lineno">624</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L625"></a><tt class="py-lineno">625</tt>  <tt class="py-line">            <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L626"></a><tt class="py-lineno">626</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&#x27;up&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;0&#x27;</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L627"></a><tt class="py-lineno">627</tt>  <tt class="py-line">                <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L628"></a><tt class="py-lineno">628</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&#x27;down&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;1&#x27;</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L629"></a><tt class="py-lineno">629</tt>  <tt class="py-line">                <tt class="py-name">_dir</tt> <tt class="py-op">=</tt> <tt class="py-keyword">True</tt> </tt>
+<a name="L630"></a><tt class="py-lineno">630</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L631"></a><tt class="py-lineno">631</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-42" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityError" class="py-name" href="#" onclick="return doclink('link-42', 'YapyUtilsCapabilityError', 'link-15');">YapyUtilsCapabilityError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L632"></a><tt class="py-lineno">632</tt>  <tt class="py-line">                    <tt class="py-string">&quot;valid directions are (up, 0, down, 1), got: &quot;</tt> </tt>
+<a name="L633"></a><tt class="py-lineno">633</tt>  <tt class="py-line">                    <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L634"></a><tt class="py-lineno">634</tt>  <tt class="py-line">                    <tt class="py-op">)</tt>  </tt>
+<a name="L635"></a><tt class="py-lineno">635</tt>  <tt class="py-line"> </tt>
+<a name="L636"></a><tt class="py-lineno">636</tt>  <tt class="py-line">        <tt class="py-comment"># collect the nodes on the searchpath</tt> </tt>
+<a name="L637"></a><tt class="py-lineno">637</tt>  <tt class="py-line">        <tt class="py-name">_path_nodes</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">,</tt><tt class="py-op">]</tt> </tt>
+<a name="L638"></a><tt class="py-lineno">638</tt>  <tt class="py-line">        <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> </tt>
+<a name="L639"></a><tt class="py-lineno">639</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_srch</tt><tt class="py-op">:</tt> </tt>
+<a name="L640"></a><tt class="py-lineno">640</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">_srch</tt><tt class="py-op">:</tt> </tt>
+<a name="L641"></a><tt class="py-lineno">641</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L642"></a><tt class="py-lineno">642</tt>  <tt class="py-line">                    <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">_cur</tt><tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">]</tt> </tt>
+<a name="L643"></a><tt class="py-lineno">643</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">IndexError</tt><tt class="py-op">,</tt> <tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">TypeError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L644"></a><tt class="py-lineno">644</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt id="link-43" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityOidError" class="py-name" href="#" onclick="return doclink('link-43', 'YapyUtilsCapabilityOidError', 'link-37');">YapyUtilsCapabilityOidError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L645"></a><tt class="py-lineno">645</tt>  <tt class="py-line">                            <tt class="py-string">&quot;invalid searchpath: %s\n see: %s\n&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt> </tt>
+<a name="L646"></a><tt class="py-lineno">646</tt>  <tt class="py-line">                                <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L647"></a><tt class="py-lineno">647</tt>  <tt class="py-line">                                <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L648"></a><tt class="py-lineno">648</tt>  <tt class="py-line">                            <tt class="py-op">)</tt> </tt>
+<a name="L649"></a><tt class="py-lineno">649</tt>  <tt class="py-line">                        <tt class="py-op">)</tt> </tt>
+<a name="L650"></a><tt class="py-lineno">650</tt>  <tt class="py-line"> </tt>
+<a name="L651"></a><tt class="py-lineno">651</tt>  <tt class="py-line">                <tt class="py-name">_path_nodes</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">_cur</tt><tt class="py-op">)</tt> </tt>
+<a name="L652"></a><tt class="py-lineno">652</tt>  <tt class="py-line"> </tt>
+<a name="L653"></a><tt class="py-lineno">653</tt>  <tt class="py-line">        <tt class="py-comment"># revert for bottom-up search direction        </tt> </tt>
+<a name="L654"></a><tt class="py-lineno">654</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L655"></a><tt class="py-lineno">655</tt>  <tt class="py-line">            <tt class="py-comment"># upward - up | 0 | False</tt> </tt>
+<a name="L656"></a><tt class="py-lineno">656</tt>  <tt class="py-line">            <tt class="py-name">_path_nodes</tt> <tt class="py-op">=</tt> <tt class="py-name">reversed</tt><tt class="py-op">(</tt><tt class="py-name">_path_nodes</tt><tt class="py-op">)</tt> </tt>
+<a name="L657"></a><tt class="py-lineno">657</tt>  <tt class="py-line"> </tt>
+<a name="L658"></a><tt class="py-lineno">658</tt>  <tt class="py-line">        <tt class="py-comment"># now search the subpath for each node of the search path</tt> </tt>
+<a name="L659"></a><tt class="py-lineno">659</tt>  <tt class="py-line">        <tt class="py-comment"># first match wins</tt> </tt>
+<a name="L660"></a><tt class="py-lineno">660</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">_pn</tt> <tt class="py-keyword">in</tt> <tt class="py-name">_path_nodes</tt><tt class="py-op">:</tt> </tt>
+<a name="L661"></a><tt class="py-lineno">661</tt>  <tt class="py-line">            <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">_pn</tt> </tt>
+<a name="L662"></a><tt class="py-lineno">662</tt>  <tt class="py-line">            <tt class="py-name">_idx_subpath</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt>  <tt class="py-comment"># reset here</tt> </tt>
+<a name="L663"></a><tt class="py-lineno">663</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">subpath</tt><tt class="py-op">:</tt> </tt>
+<a name="L664"></a><tt class="py-lineno">664</tt>  <tt class="py-line">                <tt class="py-name">_excep</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L665"></a><tt class="py-lineno">665</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L666"></a><tt class="py-lineno">666</tt>  <tt class="py-line">                    <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-name">_cur</tt><tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">]</tt> </tt>
+<a name="L667"></a><tt class="py-lineno">667</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">IndexError</tt><tt class="py-op">,</tt> <tt class="py-name">KeyError</tt><tt class="py-op">,</tt> <tt class="py-name">TypeError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L668"></a><tt class="py-lineno">668</tt>  <tt class="py-line">                    <tt class="py-comment"># continue with next level - only when nodes do not fit</tt> </tt>
+<a name="L669"></a><tt class="py-lineno">669</tt>  <tt class="py-line">                    <tt class="py-name">_cur</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L670"></a><tt class="py-lineno">670</tt>  <tt class="py-line">                    <tt class="py-name">_excep</tt> <tt class="py-op">=</tt> <tt class="py-keyword">True</tt> </tt>
+<a name="L671"></a><tt class="py-lineno">671</tt>  <tt class="py-line">                    <tt class="py-keyword">break</tt> </tt>
+<a name="L672"></a><tt class="py-lineno">672</tt>  <tt class="py-line">                 </tt>
+<a name="L673"></a><tt class="py-lineno">673</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_excep</tt><tt class="py-op">:</tt> </tt>
+<a name="L674"></a><tt class="py-lineno">674</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt>  <tt class="py-comment"># has hit a regular match</tt> </tt>
+<a name="L675"></a><tt class="py-lineno">675</tt>  <tt class="py-line"> </tt>
+<a name="L676"></a><tt class="py-lineno">676</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_excep</tt><tt class="py-op">:</tt> </tt>
+<a name="L677"></a><tt class="py-lineno">677</tt>  <tt class="py-line">            <tt class="py-comment"># no match</tt> </tt>
+<a name="L678"></a><tt class="py-lineno">678</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-44" class="py-name"><a title="yapyutils.config.capabilities.YapyUtilsCapabilityOidError" class="py-name" href="#" onclick="return doclink('link-44', 'YapyUtilsCapabilityOidError', 'link-37');">YapyUtilsCapabilityOidError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L679"></a><tt class="py-lineno">679</tt>  <tt class="py-line">                    <tt class="py-string">&quot;Missing subpath hook&quot;</tt> </tt>
+<a name="L680"></a><tt class="py-lineno">680</tt>  <tt class="py-line">                    <tt class="py-string">&quot;\n  searchpath:   %s&quot;</tt> </tt>
+<a name="L681"></a><tt class="py-lineno">681</tt>  <tt class="py-line">                    <tt class="py-string">&quot;\n  subpath hook: %s&quot;</tt> </tt>
+<a name="L682"></a><tt class="py-lineno">682</tt>  <tt class="py-line">                    <tt class="py-string">&quot;\n  subpath:      %s\n&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt> </tt>
+<a name="L683"></a><tt class="py-lineno">683</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">_srch</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L684"></a><tt class="py-lineno">684</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">subpath</tt><tt class="py-op">[</tt><tt class="py-name">_idx_subpath</tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L685"></a><tt class="py-lineno">685</tt>  <tt class="py-line">                        <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">subpath</tt><tt class="py-op">)</tt> </tt>
+<a name="L686"></a><tt class="py-lineno">686</tt>  <tt class="py-line">                    <tt class="py-op">)</tt> </tt>
+<a name="L687"></a><tt class="py-lineno">687</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L688"></a><tt class="py-lineno">688</tt>  <tt class="py-line"> </tt>
+<a name="L689"></a><tt class="py-lineno">689</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">_cur</tt> </tt>
+</div><a name="L690"></a><tt class="py-lineno">690</tt>  <tt class="py-line"> </tt>
+<a name="Capability.get"></a><div id="Capability.get-def"><a name="L691"></a><tt class="py-lineno">691</tt> <a class="py-toggle" href="#" id="Capability.get-toggle" onclick="return toggle('Capability.get');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#get">get</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.get-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.get-expanded"><a name="L692"></a><tt class="py-lineno">692</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Gets a value from data.</tt> </tt>
+<a name="L693"></a><tt class="py-lineno">693</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L694"></a><tt class="py-lineno">694</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L695"></a><tt class="py-lineno">695</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L696"></a><tt class="py-lineno">696</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L697"></a><tt class="py-lineno">697</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L698"></a><tt class="py-lineno">698</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L699"></a><tt class="py-lineno">699</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L700"></a><tt class="py-lineno">700</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L701"></a><tt class="py-lineno">701</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L702"></a><tt class="py-lineno">702</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">key</tt><tt class="py-op">)</tt> </tt>
+<a name="L703"></a><tt class="py-lineno">703</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L704"></a><tt class="py-lineno">704</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-keyword">None</tt> </tt>
+</div><a name="L705"></a><tt class="py-lineno">705</tt>  <tt class="py-line"> </tt>
+<a name="Capability.addfile"></a><div id="Capability.addfile-def"><a name="L706"></a><tt class="py-lineno">706</tt> <a class="py-toggle" href="#" id="Capability.addfile-toggle" onclick="return toggle('Capability.addfile');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#addfile">addfile</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">fpname</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">=</tt><tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">=</tt><tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.addfile-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.addfile-expanded"><a name="L707"></a><tt class="py-lineno">707</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Superposes a configuration file to the existing entries. Updates and</tt> </tt>
+<a name="L708"></a><tt class="py-lineno">708</tt>  <tt class="py-line"><tt class="py-docstring">        creates granular items. The a applied traversing algorithm is::</tt> </tt>
+<a name="L709"></a><tt class="py-lineno">709</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L710"></a><tt class="py-lineno">710</tt>  <tt class="py-line"><tt class="py-docstring">            1. create non-existing branches and leafs</tt> </tt>
+<a name="L711"></a><tt class="py-lineno">711</tt>  <tt class="py-line"><tt class="py-docstring">            2. replace existing leafs</tt> </tt>
+<a name="L712"></a><tt class="py-lineno">712</tt>  <tt class="py-line"><tt class="py-docstring">            3. traverse existing leafs for new branches and existing leafs</tt> </tt>
+<a name="L713"></a><tt class="py-lineno">713</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L714"></a><tt class="py-lineno">714</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L715"></a><tt class="py-lineno">715</tt>  <tt class="py-line"><tt class="py-docstring">            fpname:</tt> </tt>
+<a name="L716"></a><tt class="py-lineno">716</tt>  <tt class="py-line"><tt class="py-docstring">                see *readfile()*</tt> </tt>
+<a name="L717"></a><tt class="py-lineno">717</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L718"></a><tt class="py-lineno">718</tt>  <tt class="py-line"><tt class="py-docstring">            key:</tt> </tt>
+<a name="L719"></a><tt class="py-lineno">719</tt>  <tt class="py-line"><tt class="py-docstring">                see *readfile()*</tt> </tt>
+<a name="L720"></a><tt class="py-lineno">720</tt>  <tt class="py-line"><tt class="py-docstring">            </tt> </tt>
+<a name="L721"></a><tt class="py-lineno">721</tt>  <tt class="py-line"><tt class="py-docstring">            node:</tt> </tt>
+<a name="L722"></a><tt class="py-lineno">722</tt>  <tt class="py-line"><tt class="py-docstring">                see *readfile()*</tt> </tt>
+<a name="L723"></a><tt class="py-lineno">723</tt>  <tt class="py-line"><tt class="py-docstring">            </tt> </tt>
+<a name="L724"></a><tt class="py-lineno">724</tt>  <tt class="py-line"><tt class="py-docstring">            kargs:</tt> </tt>
+<a name="L725"></a><tt class="py-lineno">725</tt>  <tt class="py-line"><tt class="py-docstring">                path:</tt> </tt>
+<a name="L726"></a><tt class="py-lineno">726</tt>  <tt class="py-line"><tt class="py-docstring">                    see *readfile()*</tt> </tt>
+<a name="L727"></a><tt class="py-lineno">727</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L728"></a><tt class="py-lineno">728</tt>  <tt class="py-line"><tt class="py-docstring">                striproot:</tt> </tt>
+<a name="L729"></a><tt class="py-lineno">729</tt>  <tt class="py-line"><tt class="py-docstring">                    see *readfile()*</tt> </tt>
+<a name="L730"></a><tt class="py-lineno">730</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L731"></a><tt class="py-lineno">731</tt>  <tt class="py-line"><tt class="py-docstring">                suffixes:</tt> </tt>
+<a name="L732"></a><tt class="py-lineno">732</tt>  <tt class="py-line"><tt class="py-docstring">                    see *readfile()*</tt> </tt>
+<a name="L733"></a><tt class="py-lineno">733</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L734"></a><tt class="py-lineno">734</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L735"></a><tt class="py-lineno">735</tt>  <tt class="py-line"><tt class="py-docstring">            Reference to updated data structure.</tt> </tt>
+<a name="L736"></a><tt class="py-lineno">736</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L737"></a><tt class="py-lineno">737</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L738"></a><tt class="py-lineno">738</tt>  <tt class="py-line"><tt class="py-docstring">            YapyUtilsConfigError</tt> </tt>
+<a name="L739"></a><tt class="py-lineno">739</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L740"></a><tt class="py-lineno">740</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L741"></a><tt class="py-lineno">741</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L742"></a><tt class="py-lineno">742</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L743"></a><tt class="py-lineno">743</tt>  <tt class="py-line">        <tt class="py-name">jval</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method yapyutils.config.capabilities.Capability.readfile()=yapyutils.config.capabilities.Capability-class.html#readfile"><a title="yapyutils.config.capabilities.Capability.readfile" class="py-name" href="#" onclick="return doclink('link-45', 'readfile', 'link-45');">readfile</a></tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt><tt class="py-op">,</tt> <tt class="py-name">nodata</tt><tt class="py-op">=</tt><tt class="py-keyword">True</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L744"></a><tt class="py-lineno">744</tt>  <tt class="py-line"> </tt>
+<a name="L745"></a><tt class="py-lineno">745</tt>  <tt class="py-line">        <tt class="py-name">_p</tt> <tt class="py-op">=</tt> <tt class="py-name">yapydata</tt><tt class="py-op">.</tt><tt class="py-name">datatree</tt><tt class="py-op">.</tt><tt class="py-name">synjson</tt><tt class="py-op">.</tt><tt class="py-name">DataTreeJSON</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L746"></a><tt class="py-lineno">746</tt>  <tt class="py-line">        <tt class="py-name">_p</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">jval</tt><tt class="py-op">)</tt> </tt>
+<a name="L747"></a><tt class="py-lineno">747</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">_p</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> </tt>
+<a name="L748"></a><tt class="py-lineno">748</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> </tt>
+</div><a name="L749"></a><tt class="py-lineno">749</tt>  <tt class="py-line">     </tt>
+<a name="Capability.readfile"></a><div id="Capability.readfile-def"><a name="L750"></a><tt class="py-lineno">750</tt> <a class="py-toggle" href="#" id="Capability.readfile-toggle" onclick="return toggle('Capability.readfile');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.config.capabilities.Capability-class.html#readfile">readfile</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">fpname</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">=</tt><tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">=</tt><tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Capability.readfile-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Capability.readfile-expanded"><a name="L751"></a><tt class="py-lineno">751</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Reads a JSON file. This is a simple basic method for the application</tt> </tt>
+<a name="L752"></a><tt class="py-lineno">752</tt>  <tt class="py-line"><tt class="py-docstring">        on the lower layers of the software stack. It is designed for minimal</tt> </tt>
+<a name="L753"></a><tt class="py-lineno">753</tt>  <tt class="py-line"><tt class="py-docstring">        dependencies. The used standard libraries support the syntaxes::</tt> </tt>
+<a name="L754"></a><tt class="py-lineno">754</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L755"></a><tt class="py-lineno">755</tt>  <tt class="py-line"><tt class="py-docstring">            INI, JSON, .properties, XML, YAML</tt> </tt>
+<a name="L756"></a><tt class="py-lineno">756</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L757"></a><tt class="py-lineno">757</tt>  <tt class="py-line"><tt class="py-docstring">        The data is by not validated. If this is required external higher layer</tt> </tt>
+<a name="L758"></a><tt class="py-lineno">758</tt>  <tt class="py-line"><tt class="py-docstring">        tools such as *multiconf* could be applied.</tt> </tt>
+<a name="L759"></a><tt class="py-lineno">759</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L760"></a><tt class="py-lineno">760</tt>  <tt class="py-line"><tt class="py-docstring">        The *readfile()* simply replaces existing configuration data, for the </tt> </tt>
+<a name="L761"></a><tt class="py-lineno">761</tt>  <tt class="py-line"><tt class="py-docstring">        iterative update see *addfile()*.</tt> </tt>
+<a name="L762"></a><tt class="py-lineno">762</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L763"></a><tt class="py-lineno">763</tt>  <tt class="py-line"><tt class="py-docstring">        Args:</tt> </tt>
+<a name="L764"></a><tt class="py-lineno">764</tt>  <tt class="py-line"><tt class="py-docstring">            fpname:</tt> </tt>
+<a name="L765"></a><tt class="py-lineno">765</tt>  <tt class="py-line"><tt class="py-docstring">                File path name of the configuration file. Alternate relative names</tt> </tt>
+<a name="L766"></a><tt class="py-lineno">766</tt>  <tt class="py-line"><tt class="py-docstring">                could be provided, where optionally additional parameters are used</tt> </tt>
+<a name="L767"></a><tt class="py-lineno">767</tt>  <tt class="py-line"><tt class="py-docstring">                for search and file suffixes, see other parameters::</tt> </tt>
+<a name="L768"></a><tt class="py-lineno">768</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L769"></a><tt class="py-lineno">769</tt>  <tt class="py-line"><tt class="py-docstring">                    &lt;path&gt;/&lt;fpname&gt;/[&lt;suffix&gt;]</tt> </tt>
+<a name="L770"></a><tt class="py-lineno">770</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L771"></a><tt class="py-lineno">771</tt>  <tt class="py-line"><tt class="py-docstring">            key:</tt> </tt>
+<a name="L772"></a><tt class="py-lineno">772</tt>  <tt class="py-line"><tt class="py-docstring">                The key for the insertion point::</tt> </tt>
+<a name="L773"></a><tt class="py-lineno">773</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L774"></a><tt class="py-lineno">774</tt>  <tt class="py-line"><tt class="py-docstring">                    node[key] = &lt;file-data&gt;</tt> </tt>
+<a name="L775"></a><tt class="py-lineno">775</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L776"></a><tt class="py-lineno">776</tt>  <tt class="py-line"><tt class="py-docstring">                    default := None - replace self.data, </tt> </tt>
+<a name="L777"></a><tt class="py-lineno">777</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L778"></a><tt class="py-lineno">778</tt>  <tt class="py-line"><tt class="py-docstring">                The caller is responsible for the containment of the provided</tt> </tt>
+<a name="L779"></a><tt class="py-lineno">779</tt>  <tt class="py-line"><tt class="py-docstring">                node within the data structure represented by this object. No</tt> </tt>
+<a name="L780"></a><tt class="py-lineno">780</tt>  <tt class="py-line"><tt class="py-docstring">                checks are performed. </tt> </tt>
+<a name="L781"></a><tt class="py-lineno">781</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L782"></a><tt class="py-lineno">782</tt>  <tt class="py-line"><tt class="py-docstring">            node:</tt> </tt>
+<a name="L783"></a><tt class="py-lineno">783</tt>  <tt class="py-line"><tt class="py-docstring">                The node for the insertion of the read data.::</tt> </tt>
+<a name="L784"></a><tt class="py-lineno">784</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L785"></a><tt class="py-lineno">785</tt>  <tt class="py-line"><tt class="py-docstring">                    default := &lt;top&gt;</tt> </tt>
+<a name="L786"></a><tt class="py-lineno">786</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L787"></a><tt class="py-lineno">787</tt>  <tt class="py-line"><tt class="py-docstring">            kargs:</tt> </tt>
+<a name="L788"></a><tt class="py-lineno">788</tt>  <tt class="py-line"><tt class="py-docstring">                nodata:</tt> </tt>
+<a name="L789"></a><tt class="py-lineno">789</tt>  <tt class="py-line"><tt class="py-docstring">                    Prohibit insertion to *self.data*, returns the data reference only. ::</tt> </tt>
+<a name="L790"></a><tt class="py-lineno">790</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L791"></a><tt class="py-lineno">791</tt>  <tt class="py-line"><tt class="py-docstring">                        default := False</tt> </tt>
+<a name="L792"></a><tt class="py-lineno">792</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L793"></a><tt class="py-lineno">793</tt>  <tt class="py-line"><tt class="py-docstring">                path:</tt> </tt>
+<a name="L794"></a><tt class="py-lineno">794</tt>  <tt class="py-line"><tt class="py-docstring">                    Alternate list of search paths::</tt> </tt>
+<a name="L795"></a><tt class="py-lineno">795</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L796"></a><tt class="py-lineno">796</tt>  <tt class="py-line"><tt class="py-docstring">                        path := &lt;list-of-search-paths&gt; </tt> </tt>
+<a name="L797"></a><tt class="py-lineno">797</tt>  <tt class="py-line"><tt class="py-docstring">                        list-of-search-paths := &lt;spath&gt; [, &lt;list-of-search-paths&gt;]</tt> </tt>
+<a name="L798"></a><tt class="py-lineno">798</tt>  <tt class="py-line"><tt class="py-docstring">                        spath := &quot;path-prefix&quot;</tt> </tt>
+<a name="L799"></a><tt class="py-lineno">799</tt>  <tt class="py-line"><tt class="py-docstring">                        </tt> </tt>
+<a name="L800"></a><tt class="py-lineno">800</tt>  <tt class="py-line"><tt class="py-docstring">                striproot:</tt> </tt>
+<a name="L801"></a><tt class="py-lineno">801</tt>  <tt class="py-line"><tt class="py-docstring">                    A special option for *XML* files. When *True* suppresses the mandatory</tt> </tt>
+<a name="L802"></a><tt class="py-lineno">802</tt>  <tt class="py-line"><tt class="py-docstring">                    named root node of *XML*. Thus provides a similar result as *JSON* for</tt> </tt>
+<a name="L803"></a><tt class="py-lineno">803</tt>  <tt class="py-line"><tt class="py-docstring">                    better merge and internal processing. Other parsers simply ignore this</tt> </tt>
+<a name="L804"></a><tt class="py-lineno">804</tt>  <tt class="py-line"><tt class="py-docstring">                    option.</tt> </tt>
+<a name="L805"></a><tt class="py-lineno">805</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L806"></a><tt class="py-lineno">806</tt>  <tt class="py-line"><tt class="py-docstring">                suffixes:</tt> </tt>
+<a name="L807"></a><tt class="py-lineno">807</tt>  <tt class="py-line"><tt class="py-docstring">                    Suffixes as preferences for configuration file type::</tt> </tt>
+<a name="L808"></a><tt class="py-lineno">808</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L809"></a><tt class="py-lineno">809</tt>  <tt class="py-line"><tt class="py-docstring">                        suffixes := &#x27;[&#x27; &lt;list-of-preferences&gt; &#x27;]&#x27; </tt> </tt>
+<a name="L810"></a><tt class="py-lineno">810</tt>  <tt class="py-line"><tt class="py-docstring">                        list-of-preferences := &lt;pref&gt; [, &lt;list-of-preferences&gt;]</tt> </tt>
+<a name="L811"></a><tt class="py-lineno">811</tt>  <tt class="py-line"><tt class="py-docstring">                        </tt> </tt>
+<a name="L812"></a><tt class="py-lineno">812</tt>  <tt class="py-line"><tt class="py-docstring">                        pref := (     # the order defines the search and usage priority</tt> </tt>
+<a name="L813"></a><tt class="py-lineno">813</tt>  <tt class="py-line"><tt class="py-docstring">                              &#x27;yaml&#x27;</tt> </tt>
+<a name="L814"></a><tt class="py-lineno">814</tt>  <tt class="py-line"><tt class="py-docstring">                            | &#x27;json&#x27;</tt> </tt>
+<a name="L815"></a><tt class="py-lineno">815</tt>  <tt class="py-line"><tt class="py-docstring">                            | &#x27;xml&#x27;</tt> </tt>
+<a name="L816"></a><tt class="py-lineno">816</tt>  <tt class="py-line"><tt class="py-docstring">                            | &#x27;inix&#x27;</tt> </tt>
+<a name="L817"></a><tt class="py-lineno">817</tt>  <tt class="py-line"><tt class="py-docstring">                            | &#x27;ini&#x27;</tt> </tt>
+<a name="L818"></a><tt class="py-lineno">818</tt>  <tt class="py-line"><tt class="py-docstring">                            | &#x27;cfg&#x27;</tt> </tt>
+<a name="L819"></a><tt class="py-lineno">819</tt>  <tt class="py-line"><tt class="py-docstring">                            | &#x27;properties&#x27;</tt> </tt>
+<a name="L820"></a><tt class="py-lineno">820</tt>  <tt class="py-line"><tt class="py-docstring">                        )</tt> </tt>
+<a name="L821"></a><tt class="py-lineno">821</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L822"></a><tt class="py-lineno">822</tt>  <tt class="py-line"><tt class="py-docstring">        Returns:</tt> </tt>
+<a name="L823"></a><tt class="py-lineno">823</tt>  <tt class="py-line"><tt class="py-docstring">            Reference to read data structure.</tt> </tt>
+<a name="L824"></a><tt class="py-lineno">824</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L825"></a><tt class="py-lineno">825</tt>  <tt class="py-line"><tt class="py-docstring">        Raises:</tt> </tt>
+<a name="L826"></a><tt class="py-lineno">826</tt>  <tt class="py-line"><tt class="py-docstring">            YapyUtilsConfigError</tt> </tt>
+<a name="L827"></a><tt class="py-lineno">827</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L828"></a><tt class="py-lineno">828</tt>  <tt class="py-line"><tt class="py-docstring">            pass-through</tt> </tt>
+<a name="L829"></a><tt class="py-lineno">829</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L830"></a><tt class="py-lineno">830</tt>  <tt class="py-line"><tt class="py-docstring">        &quot;&quot;&quot;</tt> </tt>
+<a name="L831"></a><tt class="py-lineno">831</tt>  <tt class="py-line"> </tt>
+<a name="L832"></a><tt class="py-lineno">832</tt>  <tt class="py-line">        <tt class="py-name">_nodata</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-46', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;nodata&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L833"></a><tt class="py-lineno">833</tt>  <tt class="py-line">        <tt class="py-name">_app</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-47', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;app&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L834"></a><tt class="py-lineno">834</tt>  <tt class="py-line">        <tt class="py-name">_suffixes</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-48', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;suffixes&#x27;</tt><tt class="py-op">,</tt> <tt id="link-49" class="py-name"><a title="yapyutils.config.capabilities.SUFFIXES" class="py-name" href="#" onclick="return doclink('link-49', 'SUFFIXES', 'link-5');">SUFFIXES</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L835"></a><tt class="py-lineno">835</tt>  <tt class="py-line">        <tt class="py-name">_spath</tt> <tt class="py-op">=</tt> <tt class="py-name">kargs</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="yapyutils.config.capabilities.Capability.get" class="py-name" href="#" onclick="return doclink('link-50', 'get', 'link-21');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">&#x27;path&#x27;</tt><tt class="py-op">,</tt> <tt id="link-51" class="py-name"><a title="yapyutils.config.capabilities._SPATH" class="py-name" href="#" onclick="return doclink('link-51', '_SPATH', 'link-4');">_SPATH</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L836"></a><tt class="py-lineno">836</tt>  <tt class="py-line"> </tt>
+<a name="L837"></a><tt class="py-lineno">837</tt>  <tt class="py-line">        <tt class="py-name">_parser</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L838"></a><tt class="py-lineno">838</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L839"></a><tt class="py-lineno">839</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L840"></a><tt class="py-lineno">840</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">s</tt> <tt class="py-keyword">in</tt> <tt class="py-name">_spath</tt><tt class="py-op">:</tt> </tt>
+<a name="L841"></a><tt class="py-lineno">841</tt>  <tt class="py-line">                    <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">_suffixes</tt><tt class="py-op">:</tt> </tt>
+<a name="L842"></a><tt class="py-lineno">842</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">p</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-string">&#x27;.&#x27;</tt><tt class="py-op">:</tt> </tt>
+<a name="L843"></a><tt class="py-lineno">843</tt>  <tt class="py-line">                            <tt class="py-name">p</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;.&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt> </tt>
+<a name="L844"></a><tt class="py-lineno">844</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isabs</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L845"></a><tt class="py-lineno">845</tt>  <tt class="py-line">                            <tt class="py-name">datafile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt> </tt>
+<a name="L846"></a><tt class="py-lineno">846</tt>  <tt class="py-line">                            <tt class="py-name">_parser</tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt> </tt>
+<a name="L847"></a><tt class="py-lineno">847</tt>  <tt class="py-line">                            <tt class="py-keyword">raise</tt> <tt class="py-name">_FileFound</tt> </tt>
+<a name="L848"></a><tt class="py-lineno">848</tt>  <tt class="py-line"> </tt>
+<a name="L849"></a><tt class="py-lineno">849</tt>  <tt class="py-line">                        <tt class="py-keyword">elif</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isabs</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27;capabilities&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L850"></a><tt class="py-lineno">850</tt>  <tt class="py-line">                            <tt class="py-name">datafile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27;capabilities&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt> </tt>
+<a name="L851"></a><tt class="py-lineno">851</tt>  <tt class="py-line">                            <tt class="py-name">_parser</tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt> </tt>
+<a name="L852"></a><tt class="py-lineno">852</tt>  <tt class="py-line">                            <tt class="py-keyword">raise</tt> <tt class="py-name">_FileFound</tt> </tt>
+<a name="L853"></a><tt class="py-lineno">853</tt>  <tt class="py-line">         </tt>
+<a name="L854"></a><tt class="py-lineno">854</tt>  <tt class="py-line">                        <tt class="py-keyword">elif</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">s</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L855"></a><tt class="py-lineno">855</tt>  <tt class="py-line">                            <tt class="py-name">datafile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">s</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt> </tt>
+<a name="L856"></a><tt class="py-lineno">856</tt>  <tt class="py-line">                            <tt class="py-name">_parser</tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt> </tt>
+<a name="L857"></a><tt class="py-lineno">857</tt>  <tt class="py-line">                            <tt class="py-keyword">raise</tt> <tt class="py-name">_FileFound</tt> </tt>
+<a name="L858"></a><tt class="py-lineno">858</tt>  <tt class="py-line"> </tt>
+<a name="L859"></a><tt class="py-lineno">859</tt>  <tt class="py-line">                        <tt class="py-keyword">elif</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">s</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27;capabilities&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L860"></a><tt class="py-lineno">860</tt>  <tt class="py-line">                            <tt class="py-name">datafile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">s</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-name">fpname</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27;capabilities&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">p</tt><tt class="py-op">)</tt> </tt>
+<a name="L861"></a><tt class="py-lineno">861</tt>  <tt class="py-line">                            <tt class="py-name">_parser</tt> <tt class="py-op">=</tt> <tt class="py-name">p</tt> </tt>
+<a name="L862"></a><tt class="py-lineno">862</tt>  <tt class="py-line">                            <tt class="py-keyword">raise</tt> <tt class="py-name">_FileFound</tt> </tt>
+<a name="L863"></a><tt class="py-lineno">863</tt>  <tt class="py-line"> </tt>
+<a name="L864"></a><tt class="py-lineno">864</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">_FileFound</tt><tt class="py-op">:</tt> </tt>
+<a name="L865"></a><tt class="py-lineno">865</tt>  <tt class="py-line">                <tt class="py-keyword">pass</tt> </tt>
+<a name="L866"></a><tt class="py-lineno">866</tt>  <tt class="py-line"> </tt>
+<a name="L867"></a><tt class="py-lineno">867</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L868"></a><tt class="py-lineno">868</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-52" class="py-name"><a title="yapyutils.config.YapyUtilsConfigError" class="py-name" href="#" onclick="return doclink('link-52', 'YapyUtilsConfigError', 'link-2');">YapyUtilsConfigError</a></tt><tt class="py-op">(</tt><tt class="py-string">&quot;Missing configuration file: &quot;</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">fpname</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>  </tt>
+<a name="L869"></a><tt class="py-lineno">869</tt>  <tt class="py-line"> </tt>
+<a name="L870"></a><tt class="py-lineno">870</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L871"></a><tt class="py-lineno">871</tt>  <tt class="py-line">            <tt class="py-name">datafile</tt> <tt class="py-op">=</tt> <tt class="py-name">fpname</tt> </tt>
+<a name="L872"></a><tt class="py-lineno">872</tt>  <tt class="py-line">         </tt>
+<a name="L873"></a><tt class="py-lineno">873</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_parser</tt> <tt class="py-op">==</tt> <tt class="py-keyword">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L874"></a><tt class="py-lineno">874</tt>  <tt class="py-line">            <tt class="py-name">_parser</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">splitext</tt><tt class="py-op">(</tt><tt class="py-name">datafile</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L875"></a><tt class="py-lineno">875</tt>  <tt class="py-line"> </tt>
+<a name="L876"></a><tt class="py-lineno">876</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">_parser</tt> <tt class="py-op">==</tt> <tt class="py-string">&#x27;.yaml&#x27;</tt><tt class="py-op">:</tt> </tt>
+<a name="L877"></a><tt class="py-lineno">877</tt>  <tt class="py-line">            <tt class="py-keyword">from</tt> <tt class="py-name">yapydata</tt><tt class="py-op">.</tt><tt class="py-name">datatree</tt><tt class="py-op">.</tt><tt class="py-name">synyaml</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DataTreeYAML</tt> <tt class="py-keyword">as</tt> <tt class="py-name">Parser</tt>  <tt class="py-comment"># @UnusedImport</tt> </tt>
+<a name="L878"></a><tt class="py-lineno">878</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">_parser</tt> <tt class="py-op">==</tt> <tt class="py-string">&#x27;.xml&#x27;</tt><tt class="py-op">:</tt> </tt>
+<a name="L879"></a><tt class="py-lineno">879</tt>  <tt class="py-line">            <tt class="py-keyword">from</tt> <tt class="py-name">yapydata</tt><tt class="py-op">.</tt><tt class="py-name">datatree</tt><tt class="py-op">.</tt><tt class="py-name">synxml</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DataTreeXML</tt> <tt class="py-keyword">as</tt> <tt class="py-name">Parser</tt>  <tt class="py-comment"># @UnusedImport @Reimport</tt> </tt>
+<a name="L880"></a><tt class="py-lineno">880</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">_parser</tt> <tt class="py-op">==</tt> <tt class="py-string">&#x27;.json&#x27;</tt><tt class="py-op">:</tt> </tt>
+<a name="L881"></a><tt class="py-lineno">881</tt>  <tt class="py-line">            <tt class="py-keyword">from</tt> <tt class="py-name">yapydata</tt><tt class="py-op">.</tt><tt class="py-name">datatree</tt><tt class="py-op">.</tt><tt class="py-name">synjson</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DataTreeJSON</tt> <tt class="py-keyword">as</tt> <tt class="py-name">Parser</tt>  <tt class="py-comment"># @UnusedImport @Reimport</tt> </tt>
+<a name="L882"></a><tt class="py-lineno">882</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">_parser</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&#x27;.ini&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;.inix&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;.cfg&#x27;</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;.conf&#x27;</tt><tt class="py-op">,</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L883"></a><tt class="py-lineno">883</tt>  <tt class="py-line">            <tt class="py-keyword">from</tt> <tt class="py-name">yapydata</tt><tt class="py-op">.</tt><tt class="py-name">datatree</tt><tt class="py-op">.</tt><tt class="py-name">synini</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DataTreeINI</tt> <tt class="py-keyword">as</tt> <tt class="py-name">Parser</tt>  <tt class="py-comment"># @Reimport</tt> </tt>
+<a name="L884"></a><tt class="py-lineno">884</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">_parser</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&#x27;.properties&#x27;</tt><tt class="py-op">,</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L885"></a><tt class="py-lineno">885</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplemented</tt><tt class="py-op">(</tt><tt class="py-string">&quot;not yet available&quot;</tt><tt class="py-op">)</tt> </tt>
+<a name="L886"></a><tt class="py-lineno">886</tt>  <tt class="py-line"> </tt>
+<a name="L887"></a><tt class="py-lineno">887</tt>  <tt class="py-line">        <tt class="py-name">jval</tt> <tt class="py-op">=</tt> <tt class="py-name">Parser</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">import_data</tt><tt class="py-op">(</tt><tt class="py-name">datafile</tt><tt class="py-op">,</tt> <tt class="py-name">key</tt><tt class="py-op">,</tt> <tt class="py-name">node</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L888"></a><tt class="py-lineno">888</tt>  <tt class="py-line"> </tt>
+<a name="L889"></a><tt class="py-lineno">889</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">key</tt> <tt class="py-keyword">and</tt> <tt class="py-name">node</tt> <tt class="py-op">==</tt> <tt class="py-keyword">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L890"></a><tt class="py-lineno">890</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-53" class="py-name"><a title="yapyutils.config.YapyUtilsConfigError" class="py-name" href="#" onclick="return doclink('link-53', 'YapyUtilsConfigError', 'link-2');">YapyUtilsConfigError</a></tt><tt class="py-op">(</tt><tt class="py-string">&quot;Given key(%s) requires a valid node.&quot;</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L891"></a><tt class="py-lineno">891</tt>  <tt class="py-line"> </tt>
+<a name="L892"></a><tt class="py-lineno">892</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">key</tt><tt class="py-op">:</tt> </tt>
+<a name="L893"></a><tt class="py-lineno">893</tt>  <tt class="py-line">            <tt class="py-name">node</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">jval</tt> </tt>
+<a name="L894"></a><tt class="py-lineno">894</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-keyword">not</tt> <tt class="py-name">_nodata</tt><tt class="py-op">:</tt> </tt>
+<a name="L895"></a><tt class="py-lineno">895</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">jval</tt> </tt>
+<a name="L896"></a><tt class="py-lineno">896</tt>  <tt class="py-line"> </tt>
+<a name="L897"></a><tt class="py-lineno">897</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">jval</tt> </tt>
+</div></div><a name="L898"></a><tt class="py-lineno">898</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link - Main Document -->
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="yapyutils-module.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setupdocx">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="footTable" border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+        Copyright(C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="https://arnocan.wordpress.com"
+        >https://arnocan.wordpress.com</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="lest" class="footer">
+    Generated by Epydoc 4.0.3 / Python-3.8 / fedora27 on Wed Dec  4 15:19:26 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

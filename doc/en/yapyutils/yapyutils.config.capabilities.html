@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.3. yapyutils.config.capabilities &mdash; yapyutils  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5.4. yapyutils.files.__init__" href="yapyutils.files.html" />
+    <link rel="prev" title="5.2. yapyutils.config.__init__" href="yapyutils.config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">YapyUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">4. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">5. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.html">5.1. yapyutils.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.config.html">5.2. yapyutils.config.__init__</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3. yapyutils.config.capabilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-yapyutils.config.capabilities">5.3.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#capability">5.3.2. Capability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init">5.3.2.1. __init__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#call">5.3.2.2. __call__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getattr">5.3.2.3. __getattr__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getitem">5.3.2.4. __getitem__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setitem">5.3.2.5. __setitem__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setattr">5.3.2.6. __setattr__</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#addfile">5.3.2.7. addfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create">5.3.2.8. create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get">5.3.2.9. get</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#readfile">5.3.2.10. readfile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">5.3.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.html">5.4. yapyutils.files.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.finder.html">5.5. yapyutils.files.finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.utilities.html">5.6. yapyutils.files.utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.help.html">5.7. yapyutils.help.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.modules.html">5.8. yapyutils.modules.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.modules.loader.html">5.9. yapyutils.modules.loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.releases.html">5.10. yapyutils.releases.__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">6. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">7. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">8. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">10. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">yapyutils</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">5. Modules</a> &raquo;</li>
+        
+      <li>5.3. yapyutils.config.capabilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/yapyutils.config.capabilities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab"><div class="section" id="yapyutils-config-capabilities">
+<span id="config-capabilities"></span><h1>5.3. yapyutils.config.capabilities<a class="headerlink" href="#yapyutils-config-capabilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-yapyutils.config.capabilities">
+<span id="module"></span><h2>5.3.1. Module<a class="headerlink" href="#module-yapyutils.config.capabilities" title="Permalink to this headline">¶</a></h2>
+<p><em>yapyutils.config.capabilities</em> provides simple hierarchical configuration
+file utils based on in-memory JSON representation. This includes nested and
+chained configuration data branches.</p>
+<p>The provided features are designed to provide some powerful features of structured
+configuration based on basic standard libraries, thus providing advanced setup
+support utilities for components of the lower software stack.</p>
+<p>The higher layer software components should prefer more versatile and powerful
+libraries such as <strong>multiconf</strong>.</p>
+<p>The package <em>multiconf</em> provides tools for the conversion of various data formats
+into <em>JSON</em>. This could be used to apply e.g. data type definitions supporting
+inline comments - which JSON lacks.</p>
+</div>
+<div class="section" id="capability">
+<h2>5.3.2. Capability<a class="headerlink" href="#capability" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="yapyutils.config.capabilities.Capability">
+<em class="property">class </em><code class="sig-prename descclassname">yapyutils.config.capabilities.</code><code class="sig-name descname">Capability</code><span class="sig-paren">(</span><em class="sig-param">data={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides JSON based read-only configuration of capabilities.
+This in particular comprises the priority based readout
+of values and defaults. The structure hereby includes
+specialization by subcomponents, where the missing value
+will be tried from the more general enclosing super
+component.</p>
+<p>The access to structured data trees offers various method to
+access paths of nested node attributes. This comprises the
+creation as well as the readout.</p>
+<p>The following equivalent creation methods are supported, where
+‘treenode’ could be either the root node, or any subordinated
+branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">treenode</span><span class="p">[</span><span class="s1">&#39;subnode0&#39;</span><span class="p">][</span><span class="s1">&#39;subnode1&#39;</span><span class="p">][</span><span class="s1">&#39;subnode7&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>  <span class="c1"># dynamic items</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">treenode</span><span class="p">(</span>
+            <span class="s1">&#39;subnode0&#39;</span><span class="p">,</span> <span class="s1">&#39;subnode1&#39;</span><span class="p">,</span> <span class="s1">&#39;subnode7&#39;</span><span class="p">,</span>
+            <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>  <span class="c1"># dynamic items by &#39;__call__&#39;</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">treenode</span><span class="o">.</span><span class="n">subnode0</span><span class="o">.</span><span class="n">subnode1</span><span class="o">.</span><span class="n">subnode7</span>           <span class="c1"># static attribute addressing style</span>
+</pre></div>
+</div>
+<p>The following equivalent readout methods are supported, where
+‘treenode’ could be either the root node, or any subordinated
+branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">treenode</span><span class="p">[</span><span class="s1">&#39;subnode0&#39;</span><span class="p">][</span><span class="s1">&#39;subnode1&#39;</span><span class="p">][</span><span class="s1">&#39;subnode7&#39;</span><span class="p">]</span>  <span class="c1"># dynamic items</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">treenode</span><span class="p">(</span><span class="s1">&#39;subnode0&#39;</span><span class="p">,</span> <span class="s1">&#39;subnode1&#39;</span><span class="p">,</span> <span class="s1">&#39;subnode7&#39;</span><span class="p">)</span>  <span class="c1"># dynamic items by &#39;__call__&#39;</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">treenode</span><span class="o">.</span><span class="n">subnode0</span><span class="o">.</span><span class="n">subnode1</span><span class="o">.</span><span class="n">subnode7</span>           <span class="c1"># static attribute addressing style</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="init">
+<h3>5.3.2.1. __init__<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.__init__">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">data={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – <p>Configuration data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nb">dict</span><span class="o">&gt;</span>             <span class="c1"># in-memory JSON structure</span>
+    <span class="o">&lt;</span><span class="n">file</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>   <span class="c1"># persistent JSON data</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None / initialized object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#yapyutils.config.capabilities.YapyUtilsCapabilityError" title="yapyutils.config.capabilities.YapyUtilsCapabilityError"><strong>YapyUtilsCapabilityError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="call">
+<h3>5.3.2.2. __call__<a class="headerlink" href="#call" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.__call__">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param">*subpath</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.__call__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Readout the value of a node, or an attribute. The name binding
+of the path is provided as a tuple of path items.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subpath</strong> – <p>The list of keys constituting a branch of a data tree.
+The <em>subpath</em> is treated as a branch of one of the nodes
+of a provided <em>searchpath</em> - which is by default the top node.
+The supported values are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subpath</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">ids</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">ids</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span> <span class="p">[</span><span class="s1">&#39;,&#39;</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">ids</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">node</span><span class="o">-</span><span class="nb">id</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="nb">str</span>            <span class="c1"># strings as keys - objects/dict only</span>
+    <span class="o">|</span> <span class="nb">int</span>            <span class="c1"># integers as index - lists only</span>
+    <span class="o">|</span> <span class="nb">tuple</span> <span class="o">|</span> <span class="nb">list</span>   <span class="c1"># set as choice of valid literal path items</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="n">regexpr</span><span class="o">&gt;</span>
+<span class="p">)</span>
+<span class="n">regexpr</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">compiled</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">regular</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span>
+<span class="n">compiled</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">regular</span><span class="o">-</span><span class="n">expression</span> <span class="p">:</span><span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">regexpr</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">regexpr</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;regular expression&quot;</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>kargs</strong> – <dl>
+<dt>searchpath:</dt><dd><p>Optional search path for the match of the provided
+address <em>subpath</em>. The provided <em>subpath</em> is applied
+to each node of the <em>searchpath</em> in accordance to the
+<em>direction</em> option. This provides the search and
+enumeration of side branches:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">searchpath</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">item</span><span class="o">-</span><span class="nb">list</span><span class="o">&gt;</span>
+
+<span class="n">path</span><span class="o">-</span><span class="n">item</span><span class="o">-</span><span class="nb">list</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">item</span><span class="o">-</span><span class="nb">list</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">path</span><span class="o">-</span><span class="n">item</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="nb">str</span>  <span class="c1"># item name</span>
+    <span class="o">|</span> <span class="nb">int</span>  <span class="c1"># item index</span>
+<span class="p">)</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">top</span><span class="o">-</span><span class="n">node</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The search path entries has to be actually present by default.
+These  could be either created by loading a complete tree
+structure, or by using the <em>Capabilities.create()</em> member.
+See also parameter ‘strict’.</p>
+</dd>
+<dt>direction:</dt><dd><p>The search direction of the <em>subpath</em> within the
+<em>searchpath</em>. In case of multiple superpositioned
+attributes the first traversed match.</p>
+<p>The provided values are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">direction</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="n">up</span>   <span class="o">|</span> <span class="mi">0</span>  <span class="o">|</span> <span class="kc">False</span> <span class="c1"># search from right-to-left</span>
+    <span class="o">|</span> <span class="n">down</span> <span class="o">|</span> <span class="mi">1</span>  <span class="o">|</span> <span class="kc">True</span>  <span class="c1"># search from left-to-right</span>
+<span class="p">)</span>
+
+<span class="n">default</span><span class="p">:</span><span class="o">=</span> <span class="n">up</span>
+</pre></div>
+</div>
+</dd>
+<dt>match:</dt><dd><p>Sets the match criteria for the search operation.
+Interferes with <em>direction</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="n">M_FIRST</span> <span class="o">|</span> <span class="s1">&#39;first&#39;</span>   <span class="c1"># use first matching node</span>
+    <span class="o">|</span> <span class="n">M_LAST</span>  <span class="o">|</span> <span class="s1">&#39;last&#39;</span>    <span class="c1"># use last matching node</span>
+    <span class="o">|</span> <span class="n">M_ALL</span>   <span class="o">|</span> <span class="s1">&#39;all&#39;</span>     <span class="c1"># use all - iterate all matches</span>
+<span class="p">)</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="n">M_FIRST</span>
+</pre></div>
+</div>
+</dd>
+<dt>partial:</dt><dd><p>Enables the return of partial sub paths in case the requested
+path is not completely present.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">partial</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="kc">True</span>   <span class="c1"># when not completely present, the longest</span>
+             <span class="c1"># existing part is returned, the completeness</span>
+             <span class="c1"># is provided by the result attribute &lt;partial&gt;</span>
+    <span class="o">|</span> <span class="kc">False</span>  <span class="c1"># when not completely present an exception</span>
+             <span class="c1"># is raised</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>strict:</dt><dd><p>Controls the required consistency. This comprises:</p>
+<ol class="arabic simple">
+<li><p>the presence of the search path entries</p></li>
+<li><p>the presence of the requested subpath within the set
+of search paths</p></li>
+</ol>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>In case of a match returns the tuple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">attr</span><span class="o">-</span><span class="n">value</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attr</span><span class="o">-</span><span class="n">value</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">partial</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="n">attr</span><span class="o">-</span><span class="n">value</span><span class="o">-</span><span class="n">path</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="s2">&quot;the list of keys of the top-down path&quot;</span>
+    <span class="o">|</span> <span class="s2">&quot;empty list when no item exists&quot;</span>        <span class="c1"># see &lt;complete&gt;</span>
+<span class="p">)</span>
+<span class="n">attr</span><span class="o">-</span><span class="n">value</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;value of the targeted node/attribute&quot;</span>
+<span class="n">partial</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="kc">False</span>   <span class="c1"># the complete requested path</span>
+    <span class="o">|</span> <span class="kc">True</span>    <span class="c1"># the actually present part of the path</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Else raises <em>YapyUtilsCapabilityOidError</em>.</p>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#yapyutils.config.capabilities.YapyUtilsCapabilityOidError" title="yapyutils.config.capabilities.YapyUtilsCapabilityOidError"><strong>YapyUtilsCapabilityOidError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="getattr">
+<h3>5.3.2.3. __getattr__<a class="headerlink" href="#getattr" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.__getattr__">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">__getattr__</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.__getattr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.__getattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Args:</p>
+<p>Returns:</p>
+<p>Raises:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="getitem">
+<h3>5.3.2.4. __getitem__<a class="headerlink" href="#getitem" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.__getitem__">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the value of the path within the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> – <p>The value of the node within <em>data</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="n">single</span><span class="o">-</span><span class="n">key</span><span class="o">&gt;</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">keys</span><span class="o">&gt;</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="nb">tuple</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">keys</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the addressed node/value.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>pass-through</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="setitem">
+<h3>5.3.2.5. __setitem__<a class="headerlink" href="#setitem" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.__setitem__">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">__setitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.__setitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of the path within the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – <p>The value of the node within <em>data</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="n">single</span><span class="o">-</span><span class="n">key</span><span class="o">&gt;</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">keys</span><span class="o">&gt;</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="nb">tuple</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">keys</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>val</strong> – <p>The node/value to be set at the addressed path.
+Non present values are created, present are
+replaced.</p>
+<dl class="simple">
+<dt>REMARK:</dt><dd><p>In case of lists the value of the key for
+a non-present value has to be the increment of
+the highest present key. Sparse lists are not
+supported.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the addressed node/value.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>pass-through</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="setattr">
+<h3>5.3.2.6. __setattr__<a class="headerlink" href="#setattr" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.__setattr__">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">__setattr__</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.__setattr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.__setattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates types of own data attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – <p>Name of the attribute. Following are reserved and
+treated special:</p>
+<ul>
+<li><p>type: str - ‘data’
+The value is treated as the replacement of the internal
+data attribute. Replaces or creates the complete data
+of teh current instance.</p></li>
+</ul>
+</p></li>
+<li><p><strong>value</strong> – The value of the attribute. This by default superposes
+present values by replacement. Non-present are created.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#yapyutils.config.capabilities.YapyUtilsCapabilityError" title="yapyutils.config.capabilities.YapyUtilsCapabilityError"><strong>YapyUtilsCapabilityError</strong></a> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="addfile">
+<h3>5.3.2.7. addfile<a class="headerlink" href="#addfile" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.addfile">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">addfile</code><span class="sig-paren">(</span><em class="sig-param">fpname</em>, <em class="sig-param">key=None</em>, <em class="sig-param">node=None</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.addfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.addfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Superposes a configuration file to the existing entries. Updates and
+creates granular items. The a applied traversing algorithm is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">create</span> <span class="n">non</span><span class="o">-</span><span class="n">existing</span> <span class="n">branches</span> <span class="ow">and</span> <span class="n">leafs</span>
+<span class="mf">2.</span> <span class="n">replace</span> <span class="n">existing</span> <span class="n">leafs</span>
+<span class="mf">3.</span> <span class="n">traverse</span> <span class="n">existing</span> <span class="n">leafs</span> <span class="k">for</span> <span class="n">new</span> <span class="n">branches</span> <span class="ow">and</span> <span class="n">existing</span> <span class="n">leafs</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpname</strong> – see <em>readfile()</em></p></li>
+<li><p><strong>key</strong> – see <em>readfile()</em></p></li>
+<li><p><strong>node</strong> – see <em>readfile()</em></p></li>
+<li><p><strong>kargs</strong> – <dl class="simple">
+<dt>path:</dt><dd><p>see <em>readfile()</em></p>
+</dd>
+<dt>striproot:</dt><dd><p>see <em>readfile()</em></p>
+</dd>
+<dt>suffixes:</dt><dd><p>see <em>readfile()</em></p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Reference to updated data structure.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="yapyutils.config.html#yapyutils.config.YapyUtilsConfigError" title="yapyutils.config.YapyUtilsConfigError"><strong>YapyUtilsConfigError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="create">
+<h3>5.3.2.8. create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.create">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">*subpath</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a subpath to a given node, default is from top.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subpath</strong> – <p>The list of keys constituting a branch of a data tree.
+The <em>subpath</em> is treated as a branch of one of the nodes
+of a provided <em>searchpath</em> - which is by default the top node.
+The supported values are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subpath</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">ids</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">ids</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span> <span class="p">[</span><span class="s1">&#39;,&#39;</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">ids</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">node</span><span class="o">-</span><span class="nb">id</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="nb">str</span>            <span class="c1"># strings as keys - objects/dict only</span>
+    <span class="o">|</span> <span class="nb">int</span>            <span class="c1"># integers as index - lists only</span>
+    <span class="o">|</span> <span class="nb">tuple</span> <span class="o">|</span> <span class="nb">list</span>   <span class="c1"># set as choice of valid literal path items</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="n">regexpr</span><span class="o">&gt;</span>
+<span class="p">)</span>
+<span class="n">regexpr</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">compiled</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">regular</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span>
+<span class="n">compiled</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">regular</span><span class="o">-</span><span class="n">expression</span> <span class="p">:</span><span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="o">&lt;</span><span class="n">regexpr</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">regexpr</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;regular expression&quot;</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>kargs</strong> – <dl>
+<dt>hook:</dt><dd><p>Optional node as parent of the insertion point for the new sub path.
+The node must exist.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hook</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>search path for the match of the provided
+address <em>subpath</em>. The provided <em>subpath</em> is applied
+to each node of the <em>searchpath</em> in accordance to the
+<em>direction</em> option.</p>
+<p>Default := &lt;top-node&gt;</p>
+</dd>
+<dt>create:</dt><dd><p>Create missing entities of the requested path.
+The provided value is the value of the final node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span><span class="o">&gt;</span>
+
+<span class="n">value</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">node</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">valid</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="nb">type</span><span class="o">&gt;</span>
+<span class="n">valid</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="nb">type</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+                      <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span>
+                    <span class="o">|</span> <span class="nb">str</span>                  <span class="c1"># unicode</span>
+                    <span class="o">|</span> <span class="nb">dict</span> <span class="o">|</span> <span class="nb">list</span>
+                    <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="kc">True</span> <span class="o">|</span> <span class="kc">False</span>  <span class="c1"># equivalent: null|true|false</span>
+                    <span class="p">)</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</dd>
+<dt>direction:</dt><dd><p>The search direction of the <em>subpath</em> within the
+<em>searchpath</em>. In case of multiple superpositioning
+attributes the first match of traversion.</p>
+<p>The provided values are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">direction</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="n">up</span>   <span class="o">|</span> <span class="mi">0</span>  <span class="o">|</span> <span class="kc">False</span> <span class="c1"># search from right-to-left</span>
+    <span class="o">|</span> <span class="n">down</span> <span class="o">|</span> <span class="mi">1</span>  <span class="o">|</span> <span class="kc">True</span>  <span class="c1"># search from left-to-right</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Default:= up</p>
+</dd>
+<dt>match:</dt><dd><p>Sets the match criteria for the search operation.
+Interferes with <em>direction</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="n">M_FIRST</span>   <span class="c1"># use first matching node</span>
+    <span class="o">|</span> <span class="n">M_LAST</span>    <span class="c1"># use last matching node</span>
+    <span class="o">|</span> <span class="n">M_ALL</span>     <span class="c1"># use all - iterate all matches</span>
+<span class="p">)</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>In case of a match returns the tuple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">attr</span><span class="o">-</span><span class="n">value</span><span class="o">-</span><span class="n">path</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attr</span><span class="o">-</span><span class="n">value</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="n">attr</span><span class="o">-</span><span class="n">value</span><span class="o">-</span><span class="n">path</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;the list of keys of the top-down path&quot;</span>
+<span class="n">attr</span><span class="o">-</span><span class="n">value</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;value in accordance to the type of the attribute&quot;</span>
+</pre></div>
+</div>
+<p>Else raises <em>YapyUtilsCapabilityOidError</em>.</p>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#yapyutils.config.capabilities.YapyUtilsCapabilityOidError" title="yapyutils.config.capabilities.YapyUtilsCapabilityOidError"><strong>YapyUtilsCapabilityOidError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="get">
+<h3>5.3.2.9. get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.get">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">*key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a value from data.</p>
+<p>Args:</p>
+<p>Returns:</p>
+<p>Raises:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="readfile">
+<h3>5.3.2.10. readfile<a class="headerlink" href="#readfile" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="yapyutils.config.capabilities.Capability.readfile">
+<code class="sig-prename descclassname">Capability.</code><code class="sig-name descname">readfile</code><span class="sig-paren">(</span><em class="sig-param">fpname</em>, <em class="sig-param">key=None</em>, <em class="sig-param">node=None</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#Capability.readfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.Capability.readfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a JSON file. This is a simple basic method for the application
+on the lower layers of the software stack. It is designed for minimal
+dependencies. The used standard libraries support the syntaxes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INI</span><span class="p">,</span> <span class="n">JSON</span><span class="p">,</span> <span class="o">.</span><span class="n">properties</span><span class="p">,</span> <span class="n">XML</span><span class="p">,</span> <span class="n">YAML</span>
+</pre></div>
+</div>
+<p>The data is by not validated. If this is required external higher layer
+tools such as <em>multiconf</em> could be applied.</p>
+<p>The <em>readfile()</em> simply replaces existing configuration data, for the
+iterative update see <em>addfile()</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpname</strong> – <p>File path name of the configuration file. Alternate relative names
+could be provided, where optionally additional parameters are used
+for search and file suffixes, see other parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">path</span><span class="o">&gt;/&lt;</span><span class="n">fpname</span><span class="o">&gt;/</span><span class="p">[</span><span class="o">&lt;</span><span class="n">suffix</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>key</strong> – <p>The key for the insertion point:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">-</span><span class="n">data</span><span class="o">&gt;</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="kc">None</span> <span class="o">-</span> <span class="n">replace</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>The caller is responsible for the containment of the provided
+node within the data structure represented by this object. No
+checks are performed.</p>
+</p></li>
+<li><p><strong>node</strong> – <p>The node for the insertion of the read data.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">top</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>kargs</strong> – <dl>
+<dt>nodata:</dt><dd><p>Prohibit insertion to <em>self.data</em>, returns the data reference only.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</dd>
+<dt>path:</dt><dd><p>Alternate list of search paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">search</span><span class="o">-</span><span class="n">paths</span><span class="o">&gt;</span>
+<span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">search</span><span class="o">-</span><span class="n">paths</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">spath</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">search</span><span class="o">-</span><span class="n">paths</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">spath</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;path-prefix&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>striproot:</dt><dd><p>A special option for <em>XML</em> files. When <em>True</em> suppresses the mandatory
+named root node of <em>XML</em>. Thus provides a similar result as <em>JSON</em> for
+better merge and internal processing. Other parsers simply ignore this
+option.</p>
+</dd>
+<dt>suffixes:</dt><dd><p>Suffixes as preferences for configuration file type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">suffixes</span> <span class="p">:</span><span class="o">=</span> <span class="s1">&#39;[&#39;</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">preferences</span><span class="o">&gt;</span> <span class="s1">&#39;]&#39;</span>
+<span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">preferences</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">pref</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="nb">list</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">preferences</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="n">pref</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>     <span class="c1"># the order defines the search and usage priority</span>
+      <span class="s1">&#39;yaml&#39;</span>
+    <span class="o">|</span> <span class="s1">&#39;json&#39;</span>
+    <span class="o">|</span> <span class="s1">&#39;xml&#39;</span>
+    <span class="o">|</span> <span class="s1">&#39;inix&#39;</span>
+    <span class="o">|</span> <span class="s1">&#39;ini&#39;</span>
+    <span class="o">|</span> <span class="s1">&#39;cfg&#39;</span>
+    <span class="o">|</span> <span class="s1">&#39;properties&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Reference to read data structure.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="yapyutils.config.html#yapyutils.config.YapyUtilsConfigError" title="yapyutils.config.YapyUtilsConfigError"><strong>YapyUtilsConfigError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>5.3.3. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="yapyutils.config.capabilities.YapyUtilsCapabilityError">
+<em class="property">exception </em><code class="sig-prename descclassname">yapyutils.config.capabilities.</code><code class="sig-name descname">YapyUtilsCapabilityError</code><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#YapyUtilsCapabilityError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.YapyUtilsCapabilityError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common access error.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="yapyutils.config.capabilities.YapyUtilsCapabilityOidError">
+<em class="property">exception </em><code class="sig-prename descclassname">yapyutils.config.capabilities.</code><code class="sig-name descname">YapyUtilsCapabilityOidError</code><a class="reference internal" href="_modules/yapyutils/config/capabilities.html#YapyUtilsCapabilityOidError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.config.capabilities.YapyUtilsCapabilityOidError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requested object name is not present.</p>
+</dd></dl>
+
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="yapyutils.files.html" class="btn btn-neutral float-right" title="5.4. yapyutils.files.__init__" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="yapyutils.config.html" class="btn btn-neutral float-left" title="5.2. yapyutils.config.__init__" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 04, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

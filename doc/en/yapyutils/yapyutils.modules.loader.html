@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.9. yapyutils.modules.loader &mdash; yapyutils  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5.10. yapyutils.releases.__init__" href="yapyutils.releases.html" />
+    <link rel="prev" title="5.8. yapyutils.modules.__init__" href="yapyutils.modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">YapyUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">4. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">5. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.html">5.1. yapyutils.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.config.html">5.2. yapyutils.config.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.config.capabilities.html">5.3. yapyutils.config.capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.html">5.4. yapyutils.files.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.finder.html">5.5. yapyutils.files.finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.files.utilities.html">5.6. yapyutils.files.utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.help.html">5.7. yapyutils.help.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.modules.html">5.8. yapyutils.modules.__init__</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.9. yapyutils.modules.loader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-yapyutils.modules.loader">5.9.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">5.9.2. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-modulelocation">5.9.2.1. get_modulelocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load-module">5.9.2.2. load_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-modulelocation">5.9.2.3. search_modulelocation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">5.9.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.releases.html">5.10. yapyutils.releases.__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">6. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">7. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">8. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">9. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">10. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">yapyutils</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">5. Modules</a> &raquo;</li>
+        
+      <li>5.9. yapyutils.modules.loader</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/yapyutils.modules.loader.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab"><div class="section" id="yapyutils-modules-loader">
+<span id="modules-loader"></span><h1>5.9. yapyutils.modules.loader<a class="headerlink" href="#yapyutils-modules-loader" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for the search of the location and the loading of modules based on the
+module name and the file system path.</p>
+<div class="section" id="module-yapyutils.modules.loader">
+<span id="module"></span><h2>5.9.1. Module<a class="headerlink" href="#module-yapyutils.modules.loader" title="Permalink to this headline">¶</a></h2>
+<p><em>yapyutils.modules.loader</em> provides module location and load as file.</p>
+</div>
+<div class="section" id="functions">
+<h2>5.9.2. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-modulelocation">
+<span id="get-modulelocation-doc"></span><h3>5.9.2.1. get_modulelocation<a class="headerlink" href="#get-modulelocation" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.modules.loader.get_modulelocation">
+<code class="sig-prename descclassname">yapyutils.modules.loader.</code><code class="sig-name descname">get_modulelocation</code><span class="sig-paren">(</span><em class="sig-param">mname</em>, <em class="sig-param">mbase=None</em>, <em class="sig-param">mpaths=None</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/modules/loader.html#get_modulelocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.modules.loader.get_modulelocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>“A very basic function for the detection of the absolute path and
+the relative module search-path-name for a given path of a module.
+The values are the same as would be present in <em>sys.modules</em>.
+Supports source modules as input only.</p>
+<p>The <em>platformids</em> is a low-level library within the software stack.
+The generic functions for the allocation of module sources and binaries
+are provided by <em>sourceinfo</em> <a class="reference internal" href="references.html#sourceinfo" id="id1"><span>[sourceinfo]</span></a>, which itself depends on
+the <em>platformids</em>. Thus <em>sourceinfo</em> could not be used in order to avoid
+circular dependencies. So implemented this function to keep <em>platformids</em>
+on lowest possible software-stack level only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mname</strong> – <p>The relative path of the module in dotted <em>Python</em> notation,
+without file suffix.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mname</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+     <span class="o">&lt;</span><span class="n">dotted</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="nb">str</span><span class="o">&gt;</span>
+   <span class="o">|</span> <span class="o">&lt;</span><span class="n">dotted</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="nb">str</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>mbase</strong> – <dl>
+<dt>Base for module search paths, filepath name with a trailing</dt><dd><p>separator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;..&#39;</span> <span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+</pre></div>
+</div>
+<p>The base path is used within the post-processing of the eventually matched
+path, thus has to be appropriate for all items in <em>mpaths</em>.</p>
+</dd>
+<dt>mpaths:</dt><dd><p>List of module search paths relative to <em>mbase</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="p">[</span>
+   <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>resulting in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="p">[</span>
+   <span class="n">mbase</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd>
+<dt>kargs:</dt><dd><dl>
+<dt>permitrel:</dt><dd><dl class="simple">
+<dt>Permit the return of relative module names within <em>mpath</em>.</dt><dd><p>If <em>False</em> absolute only, which is actually relative to an existing</p>
+</dd>
+</dl>
+<p>search path entry in <em>sys.path</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">permitrel</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+    <span class="kc">True</span><span class="p">,</span>       <span class="c1"># returns a relative module name if within subtree</span>
+    <span class="kc">False</span>       <span class="c1"># returns in any case a module name relative to sys.path</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Sets relavive base to the default:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rbase</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;..&#39;</span> <span class="o">+</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[.]&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="n">mname</span><span class="p">))</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Returns in case of a match the resulting entry within <em>sys.modules</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">relative</span><span class="o">-</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p>The default when no match occured is to rely on the more versatile
+search mechanism of the import implementation of the concrete
+<em>Python</em> implementation for another final trial by the caller:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">mname</span><span class="o">&gt;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PlatformIDsError</strong> – ‘mbase’ does not match ‘mpaths’</p></li>
+<li><p><strong>PlatformIDsPresentError</strong> – missing ‘mbase’</p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="load-module">
+<span id="id2"></span><h3>5.9.2.2. load_module<a class="headerlink" href="#load-module" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.modules.loader.load_module">
+<code class="sig-prename descclassname">yapyutils.modules.loader.</code><code class="sig-name descname">load_module</code><span class="sig-paren">(</span><em class="sig-param">importname</em>, <em class="sig-param">modfpath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/modules/loader.html#load_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.modules.loader.load_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the specified module by it’s name and file system path.
+Provides a common interface for all supported platforms and Python
+implementations: <em>CPyhton</em>, <em>IPython</em>, <em>IronPython</em>, <em>Jython</em>,
+and <em>PyPy</em>. For the syntaxversions <em>Python2.7</em> and <em>Python3</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>importname</strong> – The import name of the module in dotted path notation.
+The <em>importname</em> is registered in <em>sys.modules</em>.</p></li>
+<li><p><strong>modfpath</strong> – The full file system path name. The <em>modfpath</em> is
+registered in <em>sys.modules</em>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The module object on success, else <em>None</em>.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PlatformIDsError</strong> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="search-modulelocation">
+<h3>5.9.2.3. search_modulelocation<a class="headerlink" href="#search-modulelocation" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="yapyutils.modules.loader.search_modulelocation">
+<code class="sig-prename descclassname">yapyutils.modules.loader.</code><code class="sig-name descname">search_modulelocation</code><span class="sig-paren">(</span><em class="sig-param">mname</em>, <em class="sig-param">mbases=None</em>, <em class="sig-param">mpaths=None</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yapyutils/modules/loader.html#search_modulelocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.modules.loader.search_modulelocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <em>get_modulelocation()</em>, but searches multiple
+bases - <em>mbases</em> vs. <em>base</em>. Internally calls <em>get_modulelocation</em>
+for each base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mname</strong> – see <em>get_modulelocation()</em></p></li>
+<li><p><strong>mbases</strong> – <p>A list of bases for the search of relative module
+paths.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>mpaths</strong> – see <em>get_modulelocation()</em></p></li>
+<li><p><strong>kargs</strong> – <dl class="simple">
+<dt>permitrel:</dt><dd><p>see <em>get_modulelocation()</em></p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>see <em>get_modulelocation()</em></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>see get_modulelocation</strong><strong>(</strong><strong>)</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>5.9.3. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="yapyutils.modules.loader.YapyUtilsLoaderError">
+<em class="property">exception </em><code class="sig-prename descclassname">yapyutils.modules.loader.</code><code class="sig-name descname">YapyUtilsLoaderError</code><a class="reference internal" href="_modules/yapyutils/modules/loader.html#YapyUtilsLoaderError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#yapyutils.modules.loader.YapyUtilsLoaderError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module load error.</p>
+</dd></dl>
+
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="yapyutils.releases.html" class="btn btn-neutral float-right" title="5.10. yapyutils.releases.__init__" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="yapyutils.modules.html" class="btn btn-neutral float-left" title="5.8. yapyutils.modules.__init__" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 04, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

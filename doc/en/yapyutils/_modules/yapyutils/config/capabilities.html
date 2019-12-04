@@ -1,0 +1,1124 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>yapyutils.config.capabilities &mdash; yapyutils  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">YapyUtils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_documents.html">4. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_modules.html">5. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_indices.html">6. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_resources.html">7. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">8. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">9. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index_part_license.html">10. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">yapyutils</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../yapyutils.html">yapyutils</a> &raquo;</li>
+        
+          <li><a href="../config.html">yapyutils.config</a> &raquo;</li>
+        
+      <li>yapyutils.config.capabilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for yapyutils.config.capabilities</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;*yapyutils.config.capabilities* provides simple hierarchical configuration</span>
+<span class="sd">file utils based on in-memory JSON representation. This includes nested and</span>
+<span class="sd">chained configuration data branches.</span>
+
+<span class="sd">The provided features are designed to provide some powerful features of structured</span>
+<span class="sd">configuration based on basic standard libraries, thus providing advanced setup</span>
+<span class="sd">support utilities for components of the lower software stack.</span>
+
+<span class="sd">The higher layer software components should prefer more versatile and powerful</span>
+<span class="sd">libraries such as **multiconf**.</span>
+
+<span class="sd">The package *multiconf* provides tools for the conversion of various data formats</span>
+<span class="sd">into *JSON*. This could be used to apply e.g. data type definitions supporting</span>
+<span class="sd">inline comments - which JSON lacks.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">yapyutils.config</span> <span class="k">import</span> <span class="n">YapyUtilsConfigError</span>
+<span class="kn">import</span> <span class="nn">yapydata.datatree.synjson</span>
+
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Arno-Can Uestuensoez&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (C) 2019 Arno-Can Uestuensoez&quot;</span> \
+                <span class="s2">&quot; @Ingenieurbuero Arno-Can Uestuensoez&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;0.1.1&#39;</span>
+<span class="n">__uuid__</span> <span class="o">=</span> <span class="s2">&quot;60cac28d-efe6-4a8d-802f-fa4fc94fa741&quot;</span>
+
+<span class="n">__docformat__</span> <span class="o">=</span> <span class="s2">&quot;restructuredtext en&quot;</span>
+
+
+<span class="c1">#: default alternate search path locations for configuration files</span>
+<span class="n">_SPATH</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">,</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;builder&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="c1">#: known suffixes</span>
+<span class="n">SUFFIXES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;yaml&#39;</span><span class="p">,</span>        <span class="c1"># standard yaml </span>
+    <span class="s1">&#39;json&#39;</span><span class="p">,</span>        <span class="c1"># standard json</span>
+    <span class="s1">&#39;xml&#39;</span><span class="p">,</span>         <span class="c1"># xml.etree</span>
+    <span class="s1">&#39;inix&#39;</span><span class="p">,</span>        <span class="c1"># configparser + custom</span>
+    <span class="s1">&#39;ini&#39;</span><span class="p">,</span>         <span class="c1"># configparser + custom</span>
+    <span class="s1">&#39;cfg&#39;</span><span class="p">,</span>         <span class="c1"># configparser + custom</span>
+    <span class="s1">&#39;conf&#39;</span><span class="p">,</span>        <span class="c1"># configparser + custom</span>
+    <span class="s1">&#39;properties&#39;</span><span class="p">,</span>  <span class="c1"># configparser + custom</span>
+<span class="p">)</span>
+
+<div class="viewcode-block" id="YapyUtilsCapabilityError"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.YapyUtilsCapabilityError">[docs]</a><span class="k">class</span> <span class="nc">YapyUtilsCapabilityError</span><span class="p">(</span><span class="n">YapyUtilsConfigError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Common access error. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="YapyUtilsCapabilityOidError"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.YapyUtilsCapabilityOidError">[docs]</a><span class="k">class</span> <span class="nc">YapyUtilsCapabilityOidError</span><span class="p">(</span><span class="n">YapyUtilsCapabilityError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Requested object name is not present.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="n">_debug</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">_verbose</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<span class="c1"># helper for multi-break</span>
+<span class="k">class</span> <span class="nc">_FileFound</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+        
+
+<div class="viewcode-block" id="Capability"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability">[docs]</a><span class="k">class</span> <span class="nc">Capability</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Provides JSON based read-only configuration of capabilities.</span>
+<span class="sd">    This in particular comprises the priority based readout</span>
+<span class="sd">    of values and defaults. The structure hereby includes</span>
+<span class="sd">    specialization by subcomponents, where the missing value </span>
+<span class="sd">    will be tried from the more general enclosing super</span>
+<span class="sd">    component.</span>
+<span class="sd">    </span>
+<span class="sd">    The access to structured data trees offers various method to</span>
+<span class="sd">    access paths of nested node attributes. This comprises the</span>
+<span class="sd">    creation as well as the readout.</span>
+<span class="sd">    </span>
+<span class="sd">    The following equivalent creation methods are supported, where</span>
+<span class="sd">    &#39;treenode&#39; could be either the root node, or any subordinated</span>
+<span class="sd">    branch::</span>
+
+<span class="sd">        treenode[&#39;subnode0&#39;][&#39;subnode1&#39;][&#39;subnode7&#39;] = value  # dynamic items</span>
+<span class="sd">        </span>
+<span class="sd">        value = treenode(</span>
+<span class="sd">                    &#39;subnode0&#39;, &#39;subnode1&#39;, &#39;subnode7&#39;,</span>
+<span class="sd">                    create=True,</span>
+<span class="sd">                )  # dynamic items by &#39;__call__&#39;</span>
+
+<span class="sd">        value = treenode.subnode0.subnode1.subnode7           # static attribute addressing style</span>
+
+<span class="sd">    The following equivalent readout methods are supported, where</span>
+<span class="sd">    &#39;treenode&#39; could be either the root node, or any subordinated</span>
+<span class="sd">    branch::</span>
+
+<span class="sd">        value = treenode[&#39;subnode0&#39;][&#39;subnode1&#39;][&#39;subnode7&#39;]  # dynamic items</span>
+<span class="sd">        value = treenode(&#39;subnode0&#39;, &#39;subnode1&#39;, &#39;subnode7&#39;)  # dynamic items by &#39;__call__&#39;</span>
+<span class="sd">        value = treenode.subnode0.subnode1.subnode7           # static attribute addressing style</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">M_FIRST</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># use first matching node</span>
+    <span class="n">M_LAST</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># use last matching node</span>
+    <span class="n">M_ALL</span> <span class="o">=</span> <span class="mi">3</span>     <span class="c1"># use all - iterate all matches</span>
+
+    <span class="n">match_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">M_FIRST</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">M_LAST</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">M_ALL</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;all&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="p">}</span>    
+
+<div class="viewcode-block" id="Capability.__init__"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            data:</span>
+<span class="sd">                Configuration data::</span>
+
+<span class="sd">                    data := (</span>
+<span class="sd">                        &lt;dict&gt;             # in-memory JSON structure</span>
+<span class="sd">                        &lt;file-path-name&gt;   # persistent JSON data</span>
+<span class="sd">                    )</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None / initialized object</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            YapyUtilsCapabilityError</span>
+
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,)):</span>
+            <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                <span class="s2">&quot;top &#39;node&#39; must be a &#39;dict&#39; == JSON object, got: &quot;</span>
+                <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+                <span class="p">)</span> </div>
+
+<div class="viewcode-block" id="Capability.__getitem__"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.__getitem__">[docs]</a>    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the value of the path within the data.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            key:</span>
+<span class="sd">                The value of the node within *data*::</span>
+
+<span class="sd">                    key := (</span>
+<span class="sd">                          &lt;single-key&gt;</span>
+<span class="sd">                        | &lt;list-of-keys&gt;</span>
+<span class="sd">                        | &lt;tuple-of-keys&gt;</span>
+<span class="sd">                    )</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The value of the addressed node/value.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Capability.__setitem__"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.__setitem__">[docs]</a>    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the value of the path within the data.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            key:</span>
+<span class="sd">                The value of the node within *data*::</span>
+
+<span class="sd">                    key := (</span>
+<span class="sd">                          &lt;single-key&gt;</span>
+<span class="sd">                        | &lt;list-of-keys&gt;</span>
+<span class="sd">                        | &lt;tuple-of-keys&gt;</span>
+<span class="sd">                    )</span>
+
+<span class="sd">            val:</span>
+<span class="sd">                The node/value to be set at the addressed path.</span>
+<span class="sd">                Non present values are created, present are</span>
+<span class="sd">                replaced.</span>
+
+<span class="sd">                REMARK: </span>
+<span class="sd">                    In case of lists the value of the key for</span>
+<span class="sd">                    a non-present value has to be the increment of</span>
+<span class="sd">                    the highest present key. Sparse lists are not</span>
+<span class="sd">                    supported. </span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The value of the addressed node/value.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>  <span class="c1"># treat tuple equal until it raises</span>
+                    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+                        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                    <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">last</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">type</span><span class="p">()</span>
+                        
+                        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+                        
+                        <span class="n">last</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">key</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span></div>
+
+<div class="viewcode-block" id="Capability.__setattr__"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.__setattr__">[docs]</a>    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Validates types of own data attributes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name:</span>
+<span class="sd">                Name of the attribute. Following are reserved and</span>
+<span class="sd">                treated special:</span>
+<span class="sd">                </span>
+<span class="sd">                * type: str - &#39;data&#39;</span>
+<span class="sd">                  The value is treated as the replacement of the internal</span>
+<span class="sd">                  data attribute. Replaces or creates the complete data</span>
+<span class="sd">                  of teh current instance.</span>
+
+<span class="sd">            value:</span>
+<span class="sd">                The value of the attribute. This by default superposes</span>
+<span class="sd">                present values by replacement. Non-present are created.</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            YapyUtilsCapabilityError</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span>
+            <span class="c1">#</span>
+            <span class="c1"># replacement of current managed data</span>
+            <span class="c1">#</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                    <span class="s2">&quot;value must be a &#39;dict&#39; == JSON object, got: &quot;</span>
+                    <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+                    <span class="p">)</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#</span>
+            <span class="c1"># any standard attribute with standard behavior</span>
+            <span class="c1">#</span>
+            <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Capability.__getattr__"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.__getattr__">[docs]</a>    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        Raises:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+<span class="c1">#            return self.__dict__[name]</span>
+<span class="c1">#            return object.__getattr__(name)</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Capability</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Capability.__call__"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.__call__">[docs]</a>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">subpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Readout the value of a node, or an attribute. The name binding</span>
+<span class="sd">        of the path is provided as a tuple of path items. </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            subpath:</span>
+<span class="sd">                The list of keys constituting a branch of a data tree.</span>
+<span class="sd">                The *subpath* is treated as a branch of one of the nodes</span>
+<span class="sd">                of a provided *searchpath* - which is by default the top node.</span>
+<span class="sd">                The supported values are::</span>
+
+<span class="sd">                    subpath := &lt;list-of-node-ids&gt;</span>
+<span class="sd">                    &lt;list-of-node-ids&gt; := &lt;node-id&gt; [&#39;,&#39; &lt;list-of-node-ids&gt;]</span>
+<span class="sd">                    node-id := (</span>
+<span class="sd">                          str            # strings as keys - objects/dict only</span>
+<span class="sd">                        | int            # integers as index - lists only</span>
+<span class="sd">                        | tuple | list   # set as choice of valid literal path items</span>
+<span class="sd">                        | &lt;regexpr&gt;</span>
+<span class="sd">                    )</span>
+<span class="sd">                    regexpr := &lt;compiled-python-regular-expression&gt;</span>
+<span class="sd">                    compiled-python-regular-expression := re.compile(&lt;regexpr&gt;)</span>
+<span class="sd">                    regexpr := &quot;regular expression&quot;</span>
+
+<span class="sd">            kargs:</span>
+<span class="sd">                searchpath:</span>
+<span class="sd">                    Optional search path for the match of the provided </span>
+<span class="sd">                    address *subpath*. The provided *subpath* is applied</span>
+<span class="sd">                    to each node of the *searchpath* in accordance to the </span>
+<span class="sd">                    *direction* option. This provides the search and </span>
+<span class="sd">                    enumeration of side branches::</span>
+
+<span class="sd">                        searchpath := &lt;path-item-list&gt; </span>
+
+<span class="sd">                        path-item-list := &lt;path-item&gt; [, &lt;path-item-list&gt;]</span>
+<span class="sd">                        path-item := (</span>
+<span class="sd">                              str  # item name </span>
+<span class="sd">                            | int  # item index</span>
+<span class="sd">                        ) </span>
+
+<span class="sd">                        default := &lt;top-node&gt;</span>
+
+<span class="sd">                    The search path entries has to be actually present by default.</span>
+<span class="sd">                    These  could be either created by loading a complete tree</span>
+<span class="sd">                    structure, or by using the *Capabilities.create()* member.</span>
+<span class="sd">                    See also parameter &#39;strict&#39;.</span>
+
+<span class="sd">                direction:</span>
+<span class="sd">                    The search direction of the *subpath* within the </span>
+<span class="sd">                    *searchpath*. In case of multiple superpositioned</span>
+<span class="sd">                    attributes the first traversed match.</span>
+
+<span class="sd">                    The provided values are::</span>
+
+<span class="sd">                        direction := (</span>
+<span class="sd">                              up   | 0  | False # search from right-to-left</span>
+<span class="sd">                            | down | 1  | True  # search from left-to-right</span>
+<span class="sd">                        )</span>
+
+<span class="sd">                        default:= up</span>
+
+<span class="sd">                match:</span>
+<span class="sd">                    Sets the match criteria for the search operation.</span>
+<span class="sd">                    Interferes with *direction*::</span>
+
+<span class="sd">                        match := (</span>
+<span class="sd">                              M_FIRST | &#39;first&#39;   # use first matching node</span>
+<span class="sd">                            | M_LAST  | &#39;last&#39;    # use last matching node</span>
+<span class="sd">                            | M_ALL   | &#39;all&#39;     # use all - iterate all matches</span>
+<span class="sd">                        )</span>
+
+<span class="sd">                        default := M_FIRST</span>
+
+<span class="sd">                partial:</span>
+<span class="sd">                    Enables the return of partial sub paths in case the requested</span>
+<span class="sd">                    path is not completely present. ::</span>
+
+<span class="sd">                        partial := (</span>
+<span class="sd">                              True   # when not completely present, the longest </span>
+<span class="sd">                                     # existing part is returned, the completeness</span>
+<span class="sd">                                     # is provided by the result attribute &lt;partial&gt;</span>
+<span class="sd">                            | False  # when not completely present an exception</span>
+<span class="sd">                                     # is raised </span>
+<span class="sd">                        )</span>
+
+<span class="sd">                strict:</span>
+<span class="sd">                    Controls the required consistency. This comprises:</span>
+
+<span class="sd">                    1. the presence of the search path entries</span>
+
+<span class="sd">                    2. the presence of the requested subpath within the set</span>
+<span class="sd">                       of search paths </span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            In case of a match returns the tuple::</span>
+
+<span class="sd">                return := (&lt;attr-value-path&gt;, &lt;attr-value&gt;, &lt;partial&gt;)</span>
+
+<span class="sd">                attr-value-path := (</span>
+<span class="sd">                      &quot;the list of keys of the top-down path&quot;</span>
+<span class="sd">                    | &quot;empty list when no item exists&quot;        # see &lt;complete&gt;</span>
+<span class="sd">                )</span>
+<span class="sd">                attr-value := &quot;value of the targeted node/attribute&quot;</span>
+<span class="sd">                partial := (</span>
+<span class="sd">                      False   # the complete requested path</span>
+<span class="sd">                    | True    # the actually present part of the path</span>
+<span class="sd">                )</span>
+
+<span class="sd">            Else raises *YapyUtilsCapabilityOidError*.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            YapyUtilsCapabilityOidError</span>
+
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">_srch</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;searchpath&#39;</span><span class="p">,</span> <span class="p">())</span>
+        <span class="n">_dir</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">_match</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="n">Capability</span><span class="o">.</span><span class="n">M_FIRST</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_srch</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">,)):</span>
+            <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                <span class="s2">&quot;search path requires &#39;tuple&#39; or&#39;list&#39;, got: &quot;</span>
+                <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_srch</span><span class="p">)</span>
+                <span class="p">)</span> 
+
+        <span class="c1">#</span>
+        <span class="c1"># match criteria</span>
+        <span class="c1">#</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">match_map</span><span class="p">[</span><span class="n">_match</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">match_map</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">_match</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> 
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                    <span class="s2">&quot;valid match are (first, </span><span class="si">%d</span><span class="s2">, last, </span><span class="si">%d</span><span class="s2">, all, </span><span class="si">%d</span><span class="s2">,), got: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span>
+                        <span class="n">Capability</span><span class="o">.</span><span class="n">M_FIRST</span><span class="p">,</span>
+                        <span class="n">Capability</span><span class="o">.</span><span class="n">M_LAST</span><span class="p">,</span>
+                        <span class="n">Capability</span><span class="o">.</span><span class="n">M_ALL</span><span class="p">,</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">_match</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># search direction</span>
+        <span class="c1">#</span>
+        <span class="k">if</span> <span class="n">_dir</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,):</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dir</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">_dir</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,):</span>
+                <span class="n">_dir</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">elif</span> <span class="n">_dir</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,):</span>
+                <span class="n">_dir</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                    <span class="s2">&quot;valid directions are (up, 0, down, 1), got: &quot;</span>
+                    <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dir</span><span class="p">)</span>
+                    <span class="p">)</span> 
+
+        <span class="c1"># collect the nodes on the searchpath</span>
+        <span class="n">_path_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,]</span>
+        <span class="n">_cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">if</span> <span class="n">_srch</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">_srch</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">_cur</span> <span class="o">=</span> <span class="n">_cur</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">YapyUtilsCapabilityOidError</span><span class="p">(</span>
+                            <span class="s2">&quot;invalid search path: </span><span class="si">%s</span><span class="se">\n</span><span class="s2"> see: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span>
+                                <span class="nb">str</span><span class="p">(</span><span class="n">_srch</span><span class="p">),</span>
+                                <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+
+                <span class="n">_path_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_cur</span><span class="p">)</span>
+
+        <span class="c1"># revert for bottom-up search direction        </span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_dir</span><span class="p">:</span>
+            <span class="c1"># upward - up | 0 | False</span>
+            <span class="n">_path_nodes</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_path_nodes</span><span class="p">)</span>
+
+        <span class="c1"># now search the subpath for each node of the search path</span>
+        <span class="c1"># first match wins</span>
+        <span class="k">for</span> <span class="n">_pn</span> <span class="ow">in</span> <span class="n">_path_nodes</span><span class="p">:</span>
+            <span class="n">_cur</span> <span class="o">=</span> <span class="n">_pn</span>
+            <span class="n">_idx_subpath</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># reset here</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">subpath</span><span class="p">:</span>
+                <span class="n">_excep</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">_cur</span> <span class="o">=</span> <span class="n">_cur</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                    <span class="c1"># continue with next level - only when nodes do not fit</span>
+                    <span class="n">_cur</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">_excep</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+                
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">_excep</span><span class="p">:</span>
+                <span class="k">break</span>  <span class="c1"># has hit a regular match</span>
+
+        <span class="k">if</span> <span class="n">_excep</span><span class="p">:</span>
+            <span class="c1"># no match</span>
+            <span class="k">raise</span> <span class="n">YapyUtilsCapabilityOidError</span><span class="p">(</span>
+                    <span class="s2">&quot;Missing subpath hook&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  searchpath:   </span><span class="si">%s</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  subpath hook: </span><span class="si">%s</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  subpath:      </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">_srch</span><span class="p">),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">subpath</span><span class="p">[</span><span class="n">_idx_subpath</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">subpath</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_cur</span></div>
+
+<span class="c1">#     def __str__(self):</span>
+<span class="c1">#         res = &#39;&#39;</span>
+<span class="c1">#         return res</span>
+
+<div class="viewcode-block" id="Capability.create"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">subpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a subpath to a given node, default is from top. </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            subpath:</span>
+<span class="sd">                The list of keys constituting a branch of a data tree.</span>
+<span class="sd">                The *subpath* is treated as a branch of one of the nodes</span>
+<span class="sd">                of a provided *searchpath* - which is by default the top node.</span>
+<span class="sd">                The supported values are::</span>
+
+<span class="sd">                    subpath := &lt;list-of-node-ids&gt;</span>
+<span class="sd">                    &lt;list-of-node-ids&gt; := &lt;node-id&gt; [&#39;,&#39; &lt;list-of-node-ids&gt;]</span>
+<span class="sd">                    node-id := (</span>
+<span class="sd">                          str            # strings as keys - objects/dict only</span>
+<span class="sd">                        | int            # integers as index - lists only</span>
+<span class="sd">                        | tuple | list   # set as choice of valid literal path items</span>
+<span class="sd">                        | &lt;regexpr&gt;</span>
+<span class="sd">                    )</span>
+<span class="sd">                    regexpr := &lt;compiled-python-regular-expression&gt;</span>
+<span class="sd">                    compiled-python-regular-expression := re.compile(&lt;regexpr&gt;)</span>
+<span class="sd">                    regexpr := &quot;regular expression&quot;</span>
+
+<span class="sd">            kargs:</span>
+<span class="sd">                hook:</span>
+<span class="sd">                    Optional node as parent of the insertion point for the new sub path.</span>
+<span class="sd">                    The node must exist. ::</span>
+
+<span class="sd">                        hook := (</span>
+<span class="sd">                            </span>
+<span class="sd">                        )</span>
+
+<span class="sd">                    search path for the match of the provided </span>
+<span class="sd">                    address *subpath*. The provided *subpath* is applied</span>
+<span class="sd">                    to each node of the *searchpath* in accordance to the </span>
+<span class="sd">                    *direction* option.</span>
+
+<span class="sd">                    Default := &lt;top-node&gt;</span>
+
+<span class="sd">                create:</span>
+<span class="sd">                    Create missing entities of the requested path.</span>
+<span class="sd">                    The provided value is the value of the final node::</span>
+
+<span class="sd">                        create := &lt;value-of-node&gt;</span>
+
+<span class="sd">                        value-of-node := &lt;valid-json-node-type&gt;</span>
+<span class="sd">                        valid-json-node-type := (</span>
+<span class="sd">                                              int | float</span>
+<span class="sd">                                            | str                  # unicode</span>
+<span class="sd">                                            | dict | list</span>
+<span class="sd">                                            | None | True | False  # equivalent: null|true|false</span>
+<span class="sd">                                            )</span>
+
+<span class="sd">                        default := None</span>
+
+<span class="sd">                direction:</span>
+<span class="sd">                    The search direction of the *subpath* within the </span>
+<span class="sd">                    *searchpath*. In case of multiple superpositioning</span>
+<span class="sd">                    attributes the first match of traversion. </span>
+
+<span class="sd">                    The provided values are::</span>
+
+<span class="sd">                        direction := (</span>
+<span class="sd">                              up   | 0  | False # search from right-to-left</span>
+<span class="sd">                            | down | 1  | True  # search from left-to-right</span>
+<span class="sd">                        )</span>
+
+<span class="sd">                    Default:= up</span>
+
+<span class="sd">                match:</span>
+<span class="sd">                    Sets the match criteria for the search operation.</span>
+<span class="sd">                    Interferes with *direction*::</span>
+
+<span class="sd">                        match := (</span>
+<span class="sd">                              M_FIRST   # use first matching node</span>
+<span class="sd">                            | M_LAST    # use last matching node</span>
+<span class="sd">                            | M_ALL     # use all - iterate all matches</span>
+<span class="sd">                        )</span>
+
+<span class="sd">                        default :=</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            In case of a match returns the tuple::</span>
+
+<span class="sd">                return := (&lt;attr-value-path&gt;, &lt;attr-value&gt;)</span>
+
+<span class="sd">                attr-value-path := &quot;the list of keys of the top-down path&quot;</span>
+<span class="sd">                attr-value := &quot;value in accordance to the type of the attribute&quot;</span>
+
+<span class="sd">            Else raises *YapyUtilsCapabilityOidError*.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            YapyUtilsCapabilityOidError</span>
+
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">_srch</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;searchpath&#39;</span><span class="p">,</span> <span class="p">())</span>
+        <span class="n">_dir</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_create_value</span> <span class="o">=</span> <span class="n">kargs</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">]</span>
+            <span class="n">_create</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">_create_value</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">_create</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_srch</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">,)):</span>
+            <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                <span class="s2">&quot;searchpath requires &#39;tuple&#39; or&#39;list&#39;, got: &quot;</span>
+                <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_srch</span><span class="p">)</span>
+                <span class="p">)</span> 
+
+        <span class="k">if</span> <span class="n">_dir</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,):</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dir</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">_dir</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,):</span>
+                <span class="n">_dir</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">elif</span> <span class="n">_dir</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,):</span>
+                <span class="n">_dir</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">YapyUtilsCapabilityError</span><span class="p">(</span>
+                    <span class="s2">&quot;valid directions are (up, 0, down, 1), got: &quot;</span>
+                    <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dir</span><span class="p">)</span>
+                    <span class="p">)</span> 
+
+        <span class="c1"># collect the nodes on the searchpath</span>
+        <span class="n">_path_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,]</span>
+        <span class="n">_cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">if</span> <span class="n">_srch</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">_srch</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">_cur</span> <span class="o">=</span> <span class="n">_cur</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">YapyUtilsCapabilityOidError</span><span class="p">(</span>
+                            <span class="s2">&quot;invalid searchpath: </span><span class="si">%s</span><span class="se">\n</span><span class="s2"> see: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span>
+                                <span class="nb">str</span><span class="p">(</span><span class="n">_srch</span><span class="p">),</span>
+                                <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+
+                <span class="n">_path_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_cur</span><span class="p">)</span>
+
+        <span class="c1"># revert for bottom-up search direction        </span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_dir</span><span class="p">:</span>
+            <span class="c1"># upward - up | 0 | False</span>
+            <span class="n">_path_nodes</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_path_nodes</span><span class="p">)</span>
+
+        <span class="c1"># now search the subpath for each node of the search path</span>
+        <span class="c1"># first match wins</span>
+        <span class="k">for</span> <span class="n">_pn</span> <span class="ow">in</span> <span class="n">_path_nodes</span><span class="p">:</span>
+            <span class="n">_cur</span> <span class="o">=</span> <span class="n">_pn</span>
+            <span class="n">_idx_subpath</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># reset here</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">subpath</span><span class="p">:</span>
+                <span class="n">_excep</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">_cur</span> <span class="o">=</span> <span class="n">_cur</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                    <span class="c1"># continue with next level - only when nodes do not fit</span>
+                    <span class="n">_cur</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">_excep</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+                
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">_excep</span><span class="p">:</span>
+                <span class="k">break</span>  <span class="c1"># has hit a regular match</span>
+
+        <span class="k">if</span> <span class="n">_excep</span><span class="p">:</span>
+            <span class="c1"># no match</span>
+            <span class="k">raise</span> <span class="n">YapyUtilsCapabilityOidError</span><span class="p">(</span>
+                    <span class="s2">&quot;Missing subpath hook&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  searchpath:   </span><span class="si">%s</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  subpath hook: </span><span class="si">%s</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  subpath:      </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">_srch</span><span class="p">),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">subpath</span><span class="p">[</span><span class="n">_idx_subpath</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">subpath</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_cur</span></div>
+
+<div class="viewcode-block" id="Capability.get"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets a value from data.</span>
+
+<span class="sd">        Args:</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        Raises:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Capability.addfile"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.addfile">[docs]</a>    <span class="k">def</span> <span class="nf">addfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fpname</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Superposes a configuration file to the existing entries. Updates and</span>
+<span class="sd">        creates granular items. The a applied traversing algorithm is::</span>
+
+<span class="sd">            1. create non-existing branches and leafs</span>
+<span class="sd">            2. replace existing leafs</span>
+<span class="sd">            3. traverse existing leafs for new branches and existing leafs</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            fpname:</span>
+<span class="sd">                see *readfile()*</span>
+<span class="sd">                </span>
+<span class="sd">            key:</span>
+<span class="sd">                see *readfile()*</span>
+<span class="sd">            </span>
+<span class="sd">            node:</span>
+<span class="sd">                see *readfile()*</span>
+<span class="sd">            </span>
+<span class="sd">            kargs:</span>
+<span class="sd">                path:</span>
+<span class="sd">                    see *readfile()*</span>
+
+<span class="sd">                striproot:</span>
+<span class="sd">                    see *readfile()*</span>
+
+<span class="sd">                suffixes:</span>
+<span class="sd">                    see *readfile()*</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Reference to updated data structure.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            YapyUtilsConfigError</span>
+
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">jval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readfile</span><span class="p">(</span><span class="n">fpname</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">)</span>
+
+        <span class="n">_p</span> <span class="o">=</span> <span class="n">yapydata</span><span class="o">.</span><span class="n">datatree</span><span class="o">.</span><span class="n">synjson</span><span class="o">.</span><span class="n">DataTreeJSON</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">_p</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jval</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">_p</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Capability.readfile"><a class="viewcode-back" href="../../../yapyutils.config.capabilities.html#yapyutils.config.capabilities.Capability.readfile">[docs]</a>    <span class="k">def</span> <span class="nf">readfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fpname</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reads a JSON file. This is a simple basic method for the application</span>
+<span class="sd">        on the lower layers of the software stack. It is designed for minimal</span>
+<span class="sd">        dependencies. The used standard libraries support the syntaxes::</span>
+
+<span class="sd">            INI, JSON, .properties, XML, YAML</span>
+
+<span class="sd">        The data is by not validated. If this is required external higher layer</span>
+<span class="sd">        tools such as *multiconf* could be applied.</span>
+<span class="sd">        </span>
+<span class="sd">        The *readfile()* simply replaces existing configuration data, for the </span>
+<span class="sd">        iterative update see *addfile()*.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            fpname:</span>
+<span class="sd">                File path name of the configuration file. Alternate relative names</span>
+<span class="sd">                could be provided, where optionally additional parameters are used</span>
+<span class="sd">                for search and file suffixes, see other parameters::</span>
+
+<span class="sd">                    &lt;path&gt;/&lt;fpname&gt;/[&lt;suffix&gt;]</span>
+
+<span class="sd">            key:</span>
+<span class="sd">                The key for the insertion point::</span>
+
+<span class="sd">                    node[key] = &lt;file-data&gt;</span>
+
+<span class="sd">                    default := None - replace self.data, </span>
+
+<span class="sd">                The caller is responsible for the containment of the provided</span>
+<span class="sd">                node within the data structure represented by this object. No</span>
+<span class="sd">                checks are performed. </span>
+
+<span class="sd">            node:</span>
+<span class="sd">                The node for the insertion of the read data.::</span>
+
+<span class="sd">                    default := &lt;top&gt;</span>
+
+<span class="sd">            kargs:</span>
+<span class="sd">                nodata:</span>
+<span class="sd">                    Prohibit insertion to *self.data*, returns the data reference only. ::</span>
+
+<span class="sd">                        default := False</span>
+
+<span class="sd">                path:</span>
+<span class="sd">                    Alternate list of search paths::</span>
+
+<span class="sd">                        path := &lt;list-of-search-paths&gt; </span>
+<span class="sd">                        list-of-search-paths := &lt;spath&gt; [, &lt;list-of-search-paths&gt;]</span>
+<span class="sd">                        spath := &quot;path-prefix&quot;</span>
+<span class="sd">                        </span>
+<span class="sd">                striproot:</span>
+<span class="sd">                    A special option for *XML* files. When *True* suppresses the mandatory</span>
+<span class="sd">                    named root node of *XML*. Thus provides a similar result as *JSON* for</span>
+<span class="sd">                    better merge and internal processing. Other parsers simply ignore this</span>
+<span class="sd">                    option.</span>
+
+<span class="sd">                suffixes:</span>
+<span class="sd">                    Suffixes as preferences for configuration file type::</span>
+
+<span class="sd">                        suffixes := &#39;[&#39; &lt;list-of-preferences&gt; &#39;]&#39; </span>
+<span class="sd">                        list-of-preferences := &lt;pref&gt; [, &lt;list-of-preferences&gt;]</span>
+<span class="sd">                        </span>
+<span class="sd">                        pref := (     # the order defines the search and usage priority</span>
+<span class="sd">                              &#39;yaml&#39;</span>
+<span class="sd">                            | &#39;json&#39;</span>
+<span class="sd">                            | &#39;xml&#39;</span>
+<span class="sd">                            | &#39;inix&#39;</span>
+<span class="sd">                            | &#39;ini&#39;</span>
+<span class="sd">                            | &#39;cfg&#39;</span>
+<span class="sd">                            | &#39;properties&#39;</span>
+<span class="sd">                        )</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Reference to read data structure.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            YapyUtilsConfigError</span>
+
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">_nodata</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nodata&#39;</span><span class="p">)</span>
+        <span class="n">_app</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">_suffixes</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;suffixes&#39;</span><span class="p">,</span> <span class="n">SUFFIXES</span><span class="p">)</span>
+        <span class="n">_spath</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="n">_SPATH</span><span class="p">)</span>
+
+        <span class="n">_parser</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fpname</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">_spath</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_suffixes</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+                            <span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">p</span>
+                        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">fpname</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fpname</span> <span class="o">+</span> <span class="n">p</span><span class="p">):</span>
+                            <span class="n">datafile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">fpname</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
+                            <span class="n">_parser</span> <span class="o">=</span> <span class="n">p</span>
+                            <span class="k">raise</span> <span class="n">_FileFound</span>
+
+                        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">fpname</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fpname</span> <span class="o">+</span> <span class="s1">&#39;capabilities&#39;</span> <span class="o">+</span> <span class="n">p</span><span class="p">):</span>
+                            <span class="n">datafile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">fpname</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;capabilities&#39;</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
+                            <span class="n">_parser</span> <span class="o">=</span> <span class="n">p</span>
+                            <span class="k">raise</span> <span class="n">_FileFound</span>
+        
+                        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">fpname</span> <span class="o">+</span> <span class="n">p</span><span class="p">):</span>
+                            <span class="n">datafile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">fpname</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
+                            <span class="n">_parser</span> <span class="o">=</span> <span class="n">p</span>
+                            <span class="k">raise</span> <span class="n">_FileFound</span>
+
+                        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">fpname</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;capabilities&#39;</span> <span class="o">+</span> <span class="n">p</span><span class="p">):</span>
+                            <span class="n">datafile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">fpname</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;capabilities&#39;</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
+                            <span class="n">_parser</span> <span class="o">=</span> <span class="n">p</span>
+                            <span class="k">raise</span> <span class="n">_FileFound</span>
+
+            <span class="k">except</span> <span class="n">_FileFound</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">YapyUtilsConfigError</span><span class="p">(</span><span class="s2">&quot;Missing configuration file: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fpname</span><span class="p">))</span> 
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">datafile</span> <span class="o">=</span> <span class="n">fpname</span>
+        
+        <span class="k">if</span> <span class="n">_parser</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_parser</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">datafile</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">_parser</span> <span class="o">==</span> <span class="s1">&#39;.yaml&#39;</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">yapydata.datatree.synyaml</span> <span class="k">import</span> <span class="n">DataTreeYAML</span> <span class="k">as</span> <span class="n">Parser</span>  <span class="c1"># @UnusedImport</span>
+        <span class="k">elif</span> <span class="n">_parser</span> <span class="o">==</span> <span class="s1">&#39;.xml&#39;</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">yapydata.datatree.synxml</span> <span class="k">import</span> <span class="n">DataTreeXML</span> <span class="k">as</span> <span class="n">Parser</span>  <span class="c1"># @UnusedImport @Reimport</span>
+        <span class="k">elif</span> <span class="n">_parser</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">yapydata.datatree.synjson</span> <span class="k">import</span> <span class="n">DataTreeJSON</span> <span class="k">as</span> <span class="n">Parser</span>  <span class="c1"># @UnusedImport @Reimport</span>
+        <span class="k">elif</span> <span class="n">_parser</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;.ini&#39;</span><span class="p">,</span> <span class="s1">&#39;.inix&#39;</span><span class="p">,</span> <span class="s1">&#39;.cfg&#39;</span><span class="p">,</span> <span class="s1">&#39;.conf&#39;</span><span class="p">,</span> <span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">yapydata.datatree.synini</span> <span class="k">import</span> <span class="n">DataTreeINI</span> <span class="k">as</span> <span class="n">Parser</span>  <span class="c1"># @Reimport</span>
+        <span class="k">elif</span> <span class="n">_parser</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;.properties&#39;</span><span class="p">,</span> <span class="p">):</span>
+            <span class="k">raise</span> <span class="bp">NotImplemented</span><span class="p">(</span><span class="s2">&quot;not yet available&quot;</span><span class="p">)</span>
+
+        <span class="n">jval</span> <span class="o">=</span> <span class="n">Parser</span><span class="p">()</span><span class="o">.</span><span class="n">import_data</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">YapyUtilsConfigError</span><span class="p">(</span><span class="s2">&quot;Given key(</span><span class="si">%s</span><span class="s2">) requires a valid node.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)))</span>
+
+        <span class="k">if</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">node</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">jval</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">_nodata</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">jval</span>
+
+        <span class="k">return</span> <span class="n">jval</span></div></div>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 04, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
