@@ -34,7 +34,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "60cac28d-efe6-4a8d-802f-fa4fc94fa741"
 
-__vers__ = [0, 1, 36,]
+__vers__ = [0, 1, 37,]
 __version__ = "%02d.%02d.%03d"%(__vers__[0],__vers__[1],__vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -51,6 +51,15 @@ _name='yapyutils'
 
 __pkgname__ = "yapyutils"
 """package name"""
+
+_packages = [
+    'yapyutils', 
+    'yapyutils/config', 
+    'yapyutils/files', 
+    'yapyutils/help', 
+    'yapyutils/modules', 
+    'yapyutils/releases', 
+]
 
 _install_requires = []
 """prerequired non-standard packages"""
@@ -91,7 +100,7 @@ setuptools.setup(
     license=__license__,
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
     name=_name,
-    packages=['yapyutils/', ],
+    packages=_packages,
     url='https://sourceforge.net/projects/yapyutils/',
     version="%d.%d.%d"%(__vers__[0],__vers__[1],__vers__[2],),
     zip_safe=False,
