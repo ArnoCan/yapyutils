@@ -766,7 +766,7 @@ class Capability(object):
                 could be provided, where optionally additional parameters are used
                 for search and file suffixes, see other parameters::
 
-                    <path>/<fpname>/[<suffix>]
+                    <path>/<fpname>[<suffix>]
 
             key:
                 The key for the insertion point::

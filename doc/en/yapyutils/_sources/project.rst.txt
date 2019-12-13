@@ -1,6 +1,6 @@
 **Product Data**
 
-* MISSION=The 'yapyutils' package provides miscellaneous *Python* utilities for the adaptation of platform indepentent APIs.
+* MISSION=The 'yapyutils' package provides miscellaneous low-level Python utilities.
 
 * AUTHOR=Arno-Can Uestuensoez
 
@@ -10,11 +10,11 @@
 
 * LICENSE=Artistic-License-2.0 + Forced-Fairplay-Constraints
 
-* VERSION=0.1.33
+* VERSION=0.1.36
 
-* RELEASE=0.1.33
+* RELEASE=0.1.36
 
 * STATUS=Unknown
 
-* BUILDDATE=2019.12.04-14:19
+* BUILDDATE=2019.12.13-07:26
 

@@ -60,7 +60,7 @@ Project Data
 
 * VERSION: 00.01
 
-* RELEASE: 00.01.033
+* RELEASE: 00.01.036
 
 * STATUS: beta
 
