@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.37
+                0.1.38
               </div>
             
           
@@ -231,40 +231,40 @@
 <span class="sd">                     &lt;dotted-module-name-str&gt;</span>
 <span class="sd">                   | &lt;dotted-module-name-path-name-str&gt;</span>
 <span class="sd">                )</span>
-<span class="sd">    </span>
+
 <span class="sd">        mbase:</span>
 <span class="sd">            Base for module search paths, filepath name with a trailing</span>
 <span class="sd">            separator. :: </span>
-<span class="sd">    </span>
+
 <span class="sd">                default := os.path.normpath(os.path.curdir + os.sep + &#39;..&#39; ) + os.sep</span>
-<span class="sd">    </span>
+
 <span class="sd">            The base path is used within the post-processing of the eventually matched</span>
 <span class="sd">            path, thus has to be appropriate for all items in *mpaths*. </span>
-<span class="sd">    </span>
+
 <span class="sd">       mpaths:</span>
 <span class="sd">            List of module search paths relative to *mbase*:: </span>
 
 <span class="sd">                default := [</span>
 <span class="sd">                   &#39;&#39;,</span>
 <span class="sd">                ]</span>
-<span class="sd">    </span>
+
 <span class="sd">            resulting in::</span>
 
 <span class="sd">                default := [</span>
 <span class="sd">                   mbase,</span>
 <span class="sd">                ]</span>
-<span class="sd">    </span>
+
 <span class="sd">       kargs:</span>
 <span class="sd">            permitrel: </span>
 <span class="sd">                Permit the return of relative module names within *mpath*.</span>
-<span class="sd">                 If *False* absolute only, which is actually relative to an existing</span>
+<span class="sd">                If *False* absolute only, which is actually relative to an existing</span>
 <span class="sd">                search path entry in *sys.path*. ::</span>
 
 <span class="sd">                    permitrel := (</span>
 <span class="sd">                        True,       # returns a relative module name if within subtree</span>
 <span class="sd">                        False       # returns in any case a module name relative to sys.path</span>
 <span class="sd">                    )</span>
-<span class="sd">    </span>
+
 <span class="sd">                Sets relavive base to the default::</span>
 
 <span class="sd">                    rbase = os.path.normpath(os.path.dirname(__file__) + os.sep + &#39;..&#39; + re.sub(r&#39;[.]&#39;, os.sep, mname)) + os.sep</span>
@@ -273,20 +273,20 @@
 <span class="sd">        Returns in case of a match the resulting entry within *sys.modules*::</span>
 
 <span class="sd">            match -&gt; (&lt;relative-module-name&gt;, &lt;module-file-path-name&gt;,)</span>
-<span class="sd">       </span>
+
 <span class="sd">        The default when no match occured is to rely on the more versatile</span>
 <span class="sd">        search mechanism of the import implementation of the concrete </span>
 <span class="sd">        *Python* implementation for another final trial by the caller::</span>
 
 <span class="sd">            default -&gt; (&lt;mname&gt;, None,)</span>
-<span class="sd">    </span>
+
 <span class="sd">    Raises:</span>
 <span class="sd">        PlatformIDsError</span>
 <span class="sd">            &#39;mbase&#39; does not match &#39;mpaths&#39;</span>
 
 <span class="sd">        PlatformIDsPresentError</span>
 <span class="sd">            missing &#39;mbase&#39;</span>
-<span class="sd">       </span>
+
 <span class="sd">        pass-through</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -509,7 +509,7 @@
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

@@ -3,6 +3,42 @@
 Cockpit
 *******
 
+Command Line Utilities
+======================
+
+   Command utilities.
+   
+      .. raw:: html
+      
+         <div class="indextab">
+         <div class="nonbreakheadtab">
+         <div class="autocoltab">
+   
+      +---------------------------------------------+--------------+
+      | Command Line Interface                      | Call Options |
+      +=============================================+==============+
+      | :ref:`prettyenv <yapyutilsPRETTYENV>`       | --           |
+      +---------------------------------------------+--------------+
+      | :ref:`prettypath <yapyutilsPRETTYPATH>`     | --           |
+      +---------------------------------------------+--------------+
+      | :ref:`prettypypath <yapyutilsPRETTYPYPATH>` | --           |
+      +---------------------------------------------+--------------+
+
+      .. raw:: html
+         
+         </div>
+         </div>
+         </div>
+   
+      With the call interfaces:
+      
+         .. parsed-literal::
+         
+            prettyenv
+            prettypath
+            prettypypath
+   
+
 
 API
 ===

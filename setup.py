@@ -34,7 +34,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "60cac28d-efe6-4a8d-802f-fa4fc94fa741"
 
-__vers__ = [0, 1, 37,]
+__vers__ = [0, 1, 38,]
 __version__ = "%02d.%02d.%03d"%(__vers__[0],__vers__[1],__vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -96,6 +96,13 @@ setuptools.setup(
     author_email=__author_email__,
     description="The 'yapyutils' package provides miscellaneous low-level Python utilities.",
     download_url="https://sourceforge.net/projects/yapyutils/files/",
+    entry_points={
+        'console_scripts': [
+            'prettyenv = yapyutils.prettyenv:pprint_environment',
+            'prettypath = yapyutils.prettypath:pprint_path',
+            'prettypypath = yapyutils.prettypypath:pprint_pypath',
+        ]
+    },
     install_requires=_install_requires,
     license=__license__,
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),

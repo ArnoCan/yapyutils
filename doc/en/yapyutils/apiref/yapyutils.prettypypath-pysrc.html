@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>yapyutils.prettypypath</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link - Main Document -->
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="yapyutils-module.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setupdocx">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="subnavbar" width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td>
+      <table class="items" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <span class="options">
+                  <a href="frames.html" target="_top">&lt;Frames(L)</a>
+                </span>
+                &nbsp;
+            </td>
+            <td align="center">
+                &#124;
+                &nbsp;
+                <span class="options">
+                    <a href="yapyutils.prettypypath-pysrc.html" target="_top">No&nbsp;Frames</a>
+                </span>
+                &nbsp;
+                &#124;
+            </td>
+            <td align="center">
+                &nbsp;
+                <span class="options">
+                   <a href="frames-right.html" target="_top">Frames(R)&gt;</a>
+                </span>
+            </td>
+           </tr>
+      </table>
+    </td>
+    <td>
+    </td>
+ </tr>
+ <tr>
+</table>
+      <span class="breadcrumbs">
+        Package&nbsp;yapyutils ::
+        Module&nbsp;prettypypath
+      </span>
+<h1 class="epydoc">Source Code for <a href="yapyutils.prettypypath-module.html">Module yapyutils.prettypypath</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">&quot;&quot;&quot;Utility for pretty printout of paths.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">&quot;&quot;&quot;</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">__future__</tt> <tt class="py-keyword">import</tt> <tt class="py-name">absolute_import</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">__future__</tt> <tt class="py-keyword">import</tt> <tt class="py-name">print_function</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-name">__author__</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;Arno-Can Uestuensoez&#x27;</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-name">__license__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;Copyright (C) 2019 Arno-Can Uestuensoez&quot;</tt> \ </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">                <tt class="py-string">&quot; @Ingenieurbuero Arno-Can Uestuensoez&quot;</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;0.1.1&#x27;</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable yapyutils.__uuid__=yapyutils-module.html#__uuid__,Variable yapyutils.files.__uuid__=yapyutils.files-module.html#__uuid__,Variable yapyutils.files.finder.__uuid__=yapyutils.files.finder-module.html#__uuid__,Variable yapyutils.help.__uuid__=yapyutils.help-module.html#__uuid__,Variable yapyutils.config.capabilities.__uuid__=yapyutils.config.capabilities-module.html#__uuid__,Variable yapyutils.prettyenv.__uuid__=yapyutils.prettyenv-module.html#__uuid__,Variable yapyutils.modules.loader.__uuid__=yapyutils.modules.loader-module.html#__uuid__,Variable yapyutils.files.utilities.__uuid__=yapyutils.files.utilities-module.html#__uuid__,Variable yapyutils.prettypypath.__uuid__=yapyutils.prettypypath-module.html#__uuid__,Variable yapyutils.modules.__uuid__=yapyutils.modules-module.html#__uuid__,Variable yapyutils.config.__uuid__=yapyutils.config-module.html#__uuid__,Variable yapyutils.prettypath.__uuid__=yapyutils.prettypath-module.html#__uuid__,Variable yapyutils.releases.__uuid__=yapyutils.releases-module.html#__uuid__"><a title="yapyutils.__uuid__
+yapyutils.files.__uuid__
+yapyutils.files.finder.__uuid__
+yapyutils.help.__uuid__
+yapyutils.config.capabilities.__uuid__
+yapyutils.prettyenv.__uuid__
+yapyutils.modules.loader.__uuid__
+yapyutils.files.utilities.__uuid__
+yapyutils.prettypypath.__uuid__
+yapyutils.modules.__uuid__
+yapyutils.config.__uuid__
+yapyutils.prettypath.__uuid__
+yapyutils.releases.__uuid__" class="py-name" href="#" onclick="return doclink('link-0', '__uuid__', 'link-0');">__uuid__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;60cac28d-efe6-4a8d-802f-fa4fc94fa741&quot;</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;restructuredtext en&quot;</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable yapyutils._debug=yapyutils-module.html#_debug,Variable yapyutils.files._debug=yapyutils.files-module.html#_debug,Variable yapyutils.files.finder._debug=yapyutils.files.finder-module.html#_debug,Variable yapyutils.help._debug=yapyutils.help-module.html#_debug,Variable yapyutils.config.capabilities._debug=yapyutils.config.capabilities-module.html#_debug,Variable yapyutils.prettyenv._debug=yapyutils.prettyenv-module.html#_debug,Variable yapyutils.modules.loader._debug=yapyutils.modules.loader-module.html#_debug,Variable yapyutils.files.utilities._debug=yapyutils.files.utilities-module.html#_debug,Variable yapyutils.prettypypath._debug=yapyutils.prettypypath-module.html#_debug,Variable yapyutils.modules._debug=yapyutils.modules-module.html#_debug,Variable yapyutils.config._debug=yapyutils.config-module.html#_debug,Variable yapyutils.prettypath._debug=yapyutils.prettypath-module.html#_debug,Variable yapyutils.releases._debug=yapyutils.releases-module.html#_debug"><a title="yapyutils._debug
+yapyutils.files._debug
+yapyutils.files.finder._debug
+yapyutils.help._debug
+yapyutils.config.capabilities._debug
+yapyutils.prettyenv._debug
+yapyutils.modules.loader._debug
+yapyutils.files.utilities._debug
+yapyutils.prettypypath._debug
+yapyutils.modules._debug
+yapyutils.config._debug
+yapyutils.prettypath._debug
+yapyutils.releases._debug" class="py-name" href="#" onclick="return doclink('link-1', '_debug', 'link-1');">_debug</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable yapyutils._verbose=yapyutils-module.html#_verbose,Variable yapyutils.files._verbose=yapyutils.files-module.html#_verbose,Variable yapyutils.files.finder._verbose=yapyutils.files.finder-module.html#_verbose,Variable yapyutils.help._verbose=yapyutils.help-module.html#_verbose,Variable yapyutils.config.capabilities._verbose=yapyutils.config.capabilities-module.html#_verbose,Variable yapyutils.prettyenv._verbose=yapyutils.prettyenv-module.html#_verbose,Variable yapyutils.modules.loader._verbose=yapyutils.modules.loader-module.html#_verbose,Variable yapyutils.files.utilities._verbose=yapyutils.files.utilities-module.html#_verbose,Variable yapyutils.prettypypath._verbose=yapyutils.prettypypath-module.html#_verbose,Variable yapyutils.modules._verbose=yapyutils.modules-module.html#_verbose,Variable yapyutils.config._verbose=yapyutils.config-module.html#_verbose,Variable yapyutils.prettypath._verbose=yapyutils.prettypath-module.html#_verbose,Variable yapyutils.releases._verbose=yapyutils.releases-module.html#_verbose"><a title="yapyutils._verbose
+yapyutils.files._verbose
+yapyutils.files.finder._verbose
+yapyutils.help._verbose
+yapyutils.config.capabilities._verbose
+yapyutils.prettyenv._verbose
+yapyutils.modules.loader._verbose
+yapyutils.files.utilities._verbose
+yapyutils.prettypypath._verbose
+yapyutils.modules._verbose
+yapyutils.config._verbose
+yapyutils.prettypath._verbose
+yapyutils.releases._verbose" class="py-name" href="#" onclick="return doclink('link-2', '_verbose', 'link-2');">_verbose</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="ppretty_pypath"></a><div id="ppretty_pypath-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="ppretty_pypath-toggle" onclick="return toggle('ppretty_pypath');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.prettypypath-module.html#ppretty_pypath">ppretty_pypath</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ppretty_pypath-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ppretty_pypath-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-docstring">&quot;&quot;&quot;Prints runtime sys.path.  </tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    &quot;&quot;&quot;</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">&quot;%-20s%s\n&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-string">&quot;sys.path&quot;</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;:&quot;</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">&quot;%21s %s\n&quot;</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-string">&quot;:&quot;</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">p</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;\n&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt class="py-name">flush</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="yapyutils.prettypypath-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="main-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Function yapyutils.prettypypath.ppretty_pypath()=yapyutils.prettypypath-module.html#ppretty_pypath"><a title="yapyutils.prettypypath.ppretty_pypath" class="py-name" href="#" onclick="return doclink('link-3', 'ppretty_pypath', 'link-3');">ppretty_pypath</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">     </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">&quot;__main__&quot;</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;yapyutils.prettypypath&quot;</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Function yapyutils.prettypypath.main()=yapyutils.prettypypath-module.html#main,Function yapyutils.prettyenv.main()=yapyutils.prettyenv-module.html#main,Function yapyutils.prettypath.main()=yapyutils.prettypath-module.html#main"><a title="yapyutils.prettypypath.main
+yapyutils.prettyenv.main
+yapyutils.prettypath.main" class="py-name" href="#" onclick="return doclink('link-4', 'main', 'link-4');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link - Main Document -->
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="yapyutils-module.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setupdocx">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="footTable" border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+        Copyright(C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="https://arnocan.wordpress.com"
+        >https://arnocan.wordpress.com</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="lest" class="footer">
+    Generated by Epydoc 4.0.4 / Python-3.8 / fedora27 on Wed Dec 18 13:40:12 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

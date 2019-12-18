@@ -2,7 +2,6 @@
 .. _COMPONENTS:
 
 
-
 *******
 Modules
 *******
@@ -20,8 +19,10 @@ Modules
    yapyutils.help
    yapyutils.modules
    yapyutils.modules.loader
+   yapyutils.prettyenv
+   yapyutils.prettypath
+   yapyutils.prettypypath
    yapyutils.releases
-
 
 
 

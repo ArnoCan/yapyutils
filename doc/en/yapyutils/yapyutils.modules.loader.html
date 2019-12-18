@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.10. yapyutils.releases.__init__" href="yapyutils.releases.html" />
+    <link rel="next" title="5.10. yapyutils.prettyenv" href="yapyutils.prettyenv.html" />
     <link rel="prev" title="5.8. yapyutils.modules.__init__" href="yapyutils.modules.html" /> 
 </head>
 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.37
+                0.1.38
               </div>
             
           
@@ -123,7 +123,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#exceptions">5.9.3. Exceptions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="yapyutils.releases.html">5.10. yapyutils.releases.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.prettyenv.html">5.10. yapyutils.prettyenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.prettypath.html">5.11. yapyutils.prettypath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.prettypypath.html">5.12. yapyutils.prettypypath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yapyutils.releases.html">5.13. yapyutils.releases.__init__</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">6. Indices and tables</a></li>
@@ -261,11 +264,9 @@ path, thus has to be appropriate for all items in <em>mpaths</em>.</p>
 </div>
 </dd>
 <dt>kargs:</dt><dd><dl>
-<dt>permitrel:</dt><dd><dl class="simple">
-<dt>Permit the return of relative module names within <em>mpath</em>.</dt><dd><p>If <em>False</em> absolute only, which is actually relative to an existing</p>
-</dd>
-</dl>
-<p>search path entry in <em>sys.path</em>.</p>
+<dt>permitrel:</dt><dd><p>Permit the return of relative module names within <em>mpath</em>.
+If <em>False</em> absolute only, which is actually relative to an existing
+search path entry in <em>sys.path</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">permitrel</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
     <span class="kc">True</span><span class="p">,</span>       <span class="c1"># returns a relative module name if within subtree</span>
     <span class="kc">False</span>       <span class="c1"># returns in any case a module name relative to sys.path</span>
@@ -394,7 +395,7 @@ paths.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="yapyutils.releases.html" class="btn btn-neutral float-right" title="5.10. yapyutils.releases.__init__" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="yapyutils.prettyenv.html" class="btn btn-neutral float-right" title="5.10. yapyutils.prettyenv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="yapyutils.modules.html" class="btn btn-neutral float-left" title="5.8. yapyutils.modules.__init__" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -408,7 +409,7 @@ paths.</p>
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

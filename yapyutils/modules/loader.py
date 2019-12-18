@@ -50,40 +50,40 @@ def get_modulelocation(mname, mbase=None, mpaths=None, **kargs):
                      <dotted-module-name-str>
                    | <dotted-module-name-path-name-str>
                 )
-    
+
         mbase:
             Base for module search paths, filepath name with a trailing
             separator. :: 
-    
+
                 default := os.path.normpath(os.path.curdir + os.sep + '..' ) + os.sep
-    
+
             The base path is used within the post-processing of the eventually matched
             path, thus has to be appropriate for all items in *mpaths*. 
-    
+
        mpaths:
             List of module search paths relative to *mbase*:: 
 
                 default := [
                    '',
                 ]
-    
+
             resulting in::
 
                 default := [
                    mbase,
                 ]
-    
+
        kargs:
             permitrel: 
                 Permit the return of relative module names within *mpath*.
-                 If *False* absolute only, which is actually relative to an existing
+                If *False* absolute only, which is actually relative to an existing
                 search path entry in *sys.path*. ::
 
                     permitrel := (
                         True,       # returns a relative module name if within subtree
                         False       # returns in any case a module name relative to sys.path
                     )
-    
+
                 Sets relavive base to the default::
 
                     rbase = os.path.normpath(os.path.dirname(__file__) + os.sep + '..' + re.sub(r'[.]', os.sep, mname)) + os.sep
@@ -92,20 +92,20 @@ def get_modulelocation(mname, mbase=None, mpaths=None, **kargs):
         Returns in case of a match the resulting entry within *sys.modules*::
 
             match -> (<relative-module-name>, <module-file-path-name>,)
-       
+
         The default when no match occured is to rely on the more versatile
         search mechanism of the import implementation of the concrete 
         *Python* implementation for another final trial by the caller::
 
             default -> (<mname>, None,)
-    
+
     Raises:
         PlatformIDsError
             'mbase' does not match 'mpaths'
 
         PlatformIDsPresentError
             missing 'mbase'
-       
+
         pass-through
 
     """
